@@ -1,0 +1,108 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="horizontal_margin_medium_small">12dp</dimen>
+    <dimen name="horizontal_margin_medium_large">24dp</dimen>
+    <dimen name="horizontal_margin_detail">4dp</dimen>
+    <dimen name="horizontal_margin_small">8dp</dimen>
+    <dimen name="horizontal_margin_large">32dp</dimen>
+    <dimen name="horizontal_margin_x_large">48dp</dimen>
+    <dimen name="horizontal_margin_xx_large">64dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="vertical_margin_medium_small">12dp</dimen>
+    <dimen name="vertical_margin_medium_large">24dp</dimen>
+    <dimen name="vertical_margin_detail">4dp</dimen>
+    <dimen name="vertical_margin_small">8dp</dimen>
+    <dimen name="vertical_margin_large">32dp</dimen>
+    <dimen name="vertical_margin_x_large">48dp</dimen>
+    <dimen name="vertical_margin_xx_large">64dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="default_header_text_size">20dp</dimen>
+    <dimen name="button_medium_size">260dp</dimen>
+    <dimen name="minimal_height">300dp</dimen>
+
+
+    <!--TEXT SIZES-->
+    <dimen name="text_giant">40sp</dimen>
+    <dimen name="text_display">34sp</dimen>
+    <dimen name="text_headline">24sp</dimen>
+    <dimen name="text_title">22sp</dimen>
+    <dimen name="text_subheading">12sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_subtitle">18sp</dimen>
+    <dimen name="text_caption">14sp</dimen>
+
+    <!--PLACEHOLDERS-->
+    <dimen name="placeholder_default_icon_size">65dp</dimen>
+    <dimen name="placeholder_default_text_message">@dimen/text_title</dimen>
+
+    <!--DEFAULT-->
+    <dimen name="status_bar_size">25dp</dimen>
+    <dimen name="edit_text_size">48dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="roundness_full">1000dp</dimen>
+    <dimen name="roundness_partial">10dp</dimen>
+    <dimen name="roundness_minimal">4dp</dimen>
+
+    <dimen name="multiline_edit_text_height">60dp</dimen>
+
+    <dimen name="small_button">100dp</dimen>
+    <!--CORNER-->
+    <dimen name="corner">8dp</dimen>
+    <dimen name="corner_small">4dp</dimen>
+    <dimen name="corner_large">16dp</dimen>
+
+    <!--HOME-->
+    <dimen name="home_header_avatar_size">44dp</dimen>
+    <dimen name="home_header_logo_width">60dp</dimen>
+    <dimen name="home_menu_item_height">116dp</dimen>
+    <dimen name="home_menu_item_icon_size">48dp</dimen>
+
+    <!--PICTURES-->
+    <dimen name="profile_picture_size">70dp</dimen>
+
+    <dimen name="small_image">16dp</dimen>
+    <dimen name="small_image_home">24dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+
+    <dimen name="gas_stations_map_icons">32dp</dimen>
+
+    <dimen name="accredited_logo_size">80dp</dimen>
+
+    <dimen name="field_and_value_distance">12dp</dimen>
+
+    <dimen name="my_cards_list_flag_width">30dp</dimen>
+    <dimen name="my_cards_list_flag_height">20dp</dimen>
+
+    <!--CARD-->
+    <dimen name="card_height">150dp</dimen>
+
+    <!--SINGLE EDIT TEXT-->
+    <dimen name="size_item">50dp</dimen>
+    <dimen name="button_padding">85dp</dimen>
+
+    <dimen name="loading_size">180dp</dimen>
+
+
+    <!--RADIOBUTTON-->
+    <dimen name="button_format_extract_height">90dp</dimen>
+    <dimen name="button_format_extract_width">70dp</dimen>
+    <dimen name="button_file_type_size">80dp</dimen>
+    <dimen name="button_deafult">30dp</dimen>
+
+
+    <!--LOGO-->
+    <dimen name="logo_width">300dp</dimen>
+    <dimen name="logo_height">230dp</dimen>
+	<dimen name="arrow_width">16dp</dimen>
+    <dimen name="arrow_height">16dp</dimen>
+	<dimen name="virtual_card_zap_logo_height">60dp</dimen>
+    <dimen name="default_card_elevation">4dp</dimen>
+    <dimen name="copy_button_width">35dp</dimen>
+    <dimen name="copy_button_height">35dp</dimen>
+    <dimen name="logo_token_height">100dp</dimen>
+    <dimen name="logo_token_width">100dp</dimen>
+
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/horizontal_margin_large"
+    android:paddingEnd="@dimen/horizontal_margin_large"
+    tools:context=".login.LoginActivity">
+
+            <ImageView
+                android:id="@+id/logoIv"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/small_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_earth" />
+
+            <EditText
+                android:id="@+id/loginCpfEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_x_large"
+                android:textColor="@color/colorSpace"
+                android:drawableStart="@drawable/ic_id_card"
+                android:drawablePadding="@dimen/small_margin"
+                android:padding="@dimen/small_image"
+                android:hint="@string/hint_cpf"
+                app:layout_constraintTop_toBottomOf="@id/logoIv"
+                tools:ignore="Autofill"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/loginPasswordEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:padding="@dimen/small_image"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="@dimen/small_margin"
+                android:hint="@string/hint_password"
+                android:textColor="@color/colorSpace"
+                app:layout_constraintTop_toBottomOf="@+id/loginCpfEt"
+                tools:visibility="visible"
+                tools:ignore="Autofill"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/loginForgotPasswordTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/vertical_margin"
+                android:textColor="@color/colorGreen"
+                android:text="@string/forgot_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginPasswordEt" />
+
+            <Button
+                android:id="@+id/loginSigninBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:text="@string/btn_continue"
+                app:layout_constraintBottom_toTopOf="@+id/loginRegisterBtn"
+                app:layout_constraintTop_toBottomOf="@+id/loginForgotPasswordTv"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <Button
+                android:id="@+id/loginRegisterBtn"
+                style="@style/ButtonWhiteTextGreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:text="@string/btn_sign_in"
+                app:layout_constraintTop_toBottomOf="@id/loginSigninBtn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

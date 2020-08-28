@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Colabore</string>
+
+    <!--LOGIN-->
+    <string name="welcome_login">Bem vindo ao Colabore!</string>
+    <string name="forgot_password">Esqueci minha senha</string>
+
+    <!--BUTTONS-->
+    <string name="btn_continue">Continuar</string>
+    <string name="btn_sign_in">Cadastre-se</string>
+
+    <!--HINT-->
+    <string name="hint_cpf">CPF</string>
+    <string name="hint_password">Senha</string>
+
+    <!--HOME-->
+    <string name="home_header_hello">Olá,</string>
+</resources>

@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/avenir_family</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="ButtonGreenTextWhite">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@drawable/bg_rounded_corners_green</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ButtonWhiteTextGreen">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@drawable/bg_rounded_corners_white</item>
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="StatusBarWhiteTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" >true</item>
+        <item name="android:statusBarColor">@color/colorWhite</item>
+    </style>
+
+</resources>
