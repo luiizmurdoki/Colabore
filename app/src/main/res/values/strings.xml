@@ -15,4 +15,21 @@
 
     <!--HOME-->
     <string name="home_header_hello">Olá,</string>
+
+
+    <!--SINGUP-->
+    <string name="singup_hint_name">Nome</string>
+    <string name="singup_hint_email">E-mail</string>
+    <string name="singup_hint_password">Senha</string>
+    <string name="singup_hint_birthday">Data de Nascimento</string>
+    <string name="singup_hint_phone">Telefone</string>
+    <string name="singup_hint_street">Rua</string>
+    <string name="singup_hint_CEP">CEP</string>
+    <string name="singup_hint_neighbohood">Bairro</string>
+    <string name="singup_hint_number">Numero</string>
+    <string name="singup_hint_obs">Complemento</string>
+    <string name="singup_title">Informações Pessoais</string>
+
+
+
 </resources>
