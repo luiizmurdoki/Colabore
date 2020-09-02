@@ -15,6 +15,8 @@
 
     <!--HOME-->
     <string name="home_header_hello">Olá,</string>
+    <string name="home_donation">Doação</string>
+    <string name="home_discovery">Descubra</string>
 
 
     <!--SINGUP-->
@@ -29,6 +31,9 @@
     <string name="singup_hint_number">Numero</string>
     <string name="singup_hint_obs">Complemento</string>
     <string name="singup_title">Informações Pessoais</string>
+    <string name="singup_choose_one">Olá,\n escolha como sera cadastrado</string>
+    <string name="singup_donor">Doador</string>
+    <string name="singup_ngo">ONG</string>
 
 
 
