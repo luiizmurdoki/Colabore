@@ -12,6 +12,7 @@
     <!--HINT-->
     <string name="hint_cpf">CPF</string>
     <string name="hint_password">Senha</string>
+    <string name="hint_cnpj">CNPJ</string>
 
     <!--HOME-->
     <string name="home_header_hello">Olá,</string>
@@ -21,9 +22,13 @@
 
     <!--SINGUP-->
     <string name="singup_hint_name">Nome</string>
+    <string name="singup_hint_name_fantasy">Nome Fantasia</string>
     <string name="singup_hint_email">E-mail</string>
+    <string name="singup_hint_category">Categoria</string>
     <string name="singup_hint_password">Senha</string>
+    <string name="singup_hint_password_again">Confirmar Senha</string>
     <string name="singup_hint_birthday">Data de Nascimento</string>
+    <string name="singup_hint_create_ngo">Data de Registro</string>
     <string name="singup_hint_phone">Telefone</string>
     <string name="singup_hint_street">Rua</string>
     <string name="singup_hint_CEP">CEP</string>
@@ -31,9 +36,19 @@
     <string name="singup_hint_number">Numero</string>
     <string name="singup_hint_obs">Complemento</string>
     <string name="singup_title">Informações Pessoais</string>
+    <string name="singup_title_ngo">Informações sobre a ONG</string>
     <string name="singup_choose_one">Olá,\n escolha como sera cadastrado</string>
     <string name="singup_donor">Doador</string>
     <string name="singup_ngo">ONG</string>
+    <string name="singup_password_title">Crie a sua senha para usar\n no App</string>
+    <string name="sigin_up_password_rules_title">Regras da Senha</string>
+
+
+    <!--PAYMENT-->
+    <string name="payment_title">Valor da Doação</string>
+
+
+
 
 
 
