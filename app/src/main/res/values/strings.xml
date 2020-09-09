@@ -44,6 +44,10 @@
     <string name="sigin_up_password_rules_title">Regras da Senha</string>
 
 
+    <!--PAYMENT-->
+    <string name="payment_title">Valor da Doação</string>
+
+
 
 
 
