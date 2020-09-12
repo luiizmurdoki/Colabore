@@ -13,55 +13,62 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:padding="@dimen/horizontal_margin_medium_large">
 
             <TextView
+                android:id="@+id/titleTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/vertical_margin_xx_large"
+                android:gravity="center"
+                android:text="@string/payment_title"
                 android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_display"
                 android:textStyle="bold"
-                android:textSize="@dimen/text_title"
-                android:text="@string/payment_title"/>
+                app:layout_constraintBottom_toTopOf="@id/transferValueEt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.093" />
+
+            <Button
+                android:id="@+id/transferValueNextBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/horizontal_margin_medium_large"
+                android:text="@string/btn_continue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/transferValueEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/vertical_margin_large"
-                android:gravity="center"
-                android:drawableLeft="@drawable/ic_brazilian_real"
+                android:drawableLeft="@drawable/ic_brazilian"
                 android:inputType="number"
+                android:text="0,0"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"/>
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_giant"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/transferValueNextBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-            </View>
-
-            <Button
-                style="@style/ButtonGreenTextWhite"
-                android:id="@+id/transferValueNextBtn"
-                android:layout_width="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/horizontal_margin_medium_large"
-                android:text="@string/btn_continue" />
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
