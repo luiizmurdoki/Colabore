@@ -1,10 +1,13 @@
 package com.example.colabore.login
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.main.MainActivity
 import com.example.colabore.R
 import com.example.colabore.base.BaseActivity
+import com.example.colabore.dialogmessage.MessageBottomDialog
+import com.google.android.gms.common.ErrorDialogFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -26,16 +29,15 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     }
 
     private fun setListeners(){
-        loginSigninBtn.setOnClickListener { openHome() }
+        loginSigninBtn.setOnClickListener { setLoginBtnClick() }
     }
 
 
     private fun setLoginBtnClick() {
         if (allFieldsValid()) {
-            TODO( "Mandar o que o user digitou para o presenter")
            /* presenter.checkCpf(loginCpfEt.text, loginPasswordEt.text)*/
         } else {
-            displayError(getString(R.string.fields_error))
+            displayError(msg = R.string.fields_error)
         }
     }
 
@@ -53,8 +55,10 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         presenter.detachView()
     }
 
-    override fun displayError(msg: String?) {
-        displayError(msg)
+    override fun displayError(msg: Int){
+        MessageBottomDialog(this, getString(R.string.placeholder_error_title),
+            getString(msg),
+            getString(R.string.action_ok), {}, null, {}, isCancelable = true).show()
     }
 
 /*    override fun openHome() {

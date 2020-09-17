@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialogBackgroundCv"
+    app:cardCornerRadius="@dimen/roundness_partial">
+
+    <LinearLayout
+        android:id="@+id/dialogContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/vertical_margin">
+
+        <TextView
+            android:id="@+id/dialogTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/vertical_margin_small"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/dialogSubtitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/dialogHyperlink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:textAlignment="center"
+            android:textColor="@color/colorLink"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/dialogNegativeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_marginEnd="@dimen/horizontal_margin_small"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:textColor="@color/colorWhite"/>
+
+            <Button
+                android:id="@+id/dialogPositiveBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

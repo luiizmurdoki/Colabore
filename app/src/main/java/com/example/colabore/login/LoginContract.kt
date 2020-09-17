@@ -6,7 +6,7 @@ import com.example.colabore.base.BaseView
 
 interface LoginContract {
     interface View : BaseView<Presenter> {
-        fun displayError(msg: String?)
+        fun displayError(msg: Int)
     }
 
     interface Presenter : BasePresenter<View> {
