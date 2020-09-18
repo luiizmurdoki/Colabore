@@ -1,4 +1,4 @@
-package com.example.colabore.dialogmessage
+package com.example.colabore.ui.dialogmessage
 
 import android.content.Context
 import android.content.pm.ActivityInfo
@@ -8,7 +8,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import com.example.colabore.R
 import com.example.colabore.utils.extension.setVisible
-import com.example.colabore.widget.BaseBottomSheetDialog
+import com.example.colabore.ui.widget.BaseBottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.dialog_bottom_message.*
 

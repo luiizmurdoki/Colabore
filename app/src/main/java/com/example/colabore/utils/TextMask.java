@@ -1,4 +1,4 @@
-package com.example.colabore.utils;
+package com.example.colabore.ui.utils;
 
 import android.text.Editable;
 import android.text.TextWatcher;

@@ -1,6 +1,6 @@
-package com.example.colabore.utils.extension
+package com.example.colabore.ui.utils.extension
 
-import com.example.colabore.utils.Constants
+import com.example.colabore.ui.utils.Constants
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*

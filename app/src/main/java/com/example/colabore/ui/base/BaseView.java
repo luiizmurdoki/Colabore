@@ -1,4 +1,4 @@
-package com.example.colabore.base;
+package com.example.colabore.ui.base;
 
 
 /**

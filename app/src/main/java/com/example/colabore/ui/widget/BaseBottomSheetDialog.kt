@@ -1,4 +1,4 @@
-package com.example.colabore.widget
+package com.example.colabore.ui.widget
 
 import android.app.Activity
 import android.content.Context

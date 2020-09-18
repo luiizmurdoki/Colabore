@@ -1,4 +1,4 @@
-package com.example.colabore.utils.extension
+package com.example.colabore.ui.utils.extension
 
 import android.text.Editable
 import android.text.InputFilter

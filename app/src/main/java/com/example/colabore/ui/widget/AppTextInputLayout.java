@@ -1,4 +1,4 @@
-package com.example.colabore.widget;
+package com.example.colabore.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.example.colabore.R;
 import com.example.colabore.utils.TextMask;
-import com.example.colabore.utils.extension.StringExtensionsKt;
 import com.example.colabore.utils.validations.IsCnpj;
 import com.example.colabore.utils.validations.IsCpf;
 import com.example.colabore.utils.validations.IsEmail;

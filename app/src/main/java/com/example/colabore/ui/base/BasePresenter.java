@@ -1,4 +1,4 @@
-package com.example.colabore.base;
+package com.example.colabore.ui.base;
 
 /**
  * Every presenter in the app must either implement this interface or extend BasePresenter

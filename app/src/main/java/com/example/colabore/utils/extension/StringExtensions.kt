@@ -12,7 +12,6 @@ import android.text.style.StyleSpan
 import android.widget.TextView
 import com.example.colabore.utils.Constants
 import com.example.colabore.utils.TextMask
-import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 

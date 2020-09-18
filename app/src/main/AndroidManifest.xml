@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".splash.SplashActivity">
+        <activity android:name="com.example.colabore.ui.splash.SplashActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.LoginActivity"
+            android:name="com.example.colabore.ui.login.LoginActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.example.colabore.ui.main.MainActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

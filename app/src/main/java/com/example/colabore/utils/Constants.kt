@@ -1,4 +1,4 @@
-package com.example.colabore.utils
+package com.example.colabore.ui.utils
 
 import com.example.colabore.BuildConfig
 

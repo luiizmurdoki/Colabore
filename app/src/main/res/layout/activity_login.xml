@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
-    tools:context=".login.LoginActivity">
+    tools:context=".ui.login.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,13 +33,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_earth" />
 
-            <com.example.colabore.widget.DefaultEditText
+            <com.example.colabore.ui.widget.DefaultEditText
                 android:id="@+id/loginCpfEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_large"
                 android:textColor="@color/colorblack"
                 app:etEmptinessIsValid="false"
+                text = "25316577035"
                 app:etInputTextType="cpfOrCnpj"
                 app:hint="@string/hint_cpf"
                 app:layout_constraintBottom_toTopOf="@id/loginPasswordEt"
@@ -48,15 +49,15 @@
                 app:textColor="@color/colorblack"
                 app:toggleColor="@color/colorblack" />
 
-            <com.example.colabore.widget.DefaultEditText
+            <com.example.colabore.ui.widget.DefaultEditText
                 android:id="@+id/loginPasswordEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
-                app:drawableLeft="@drawable/ic_lock"
                 app:etEmptinessIsValid="false"
-                app:etInputTextType="numberPassword"
+                app:etInputTextType="name"
                 app:hint="@string/hint_password"
+                text = "Teste123"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginCpfEt"

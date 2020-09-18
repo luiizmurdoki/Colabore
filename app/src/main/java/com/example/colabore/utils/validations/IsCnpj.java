@@ -1,4 +1,4 @@
-package com.example.colabore.utils.validations;
+package com.example.colabore.ui.utils.validations;
 
 /**
  * Created by azul on 11/04/17.

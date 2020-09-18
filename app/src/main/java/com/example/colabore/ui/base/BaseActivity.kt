@@ -1,4 +1,4 @@
-package com.example.colabore.base
+package com.example.colabore.ui.base
 
 import android.content.Context
 import android.content.Intent
@@ -9,12 +9,17 @@ import android.provider.Settings
 import android.view.MenuItem
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.example.colabore.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 class BaseActivityconst val PERMISSION_REQUEST = 190
 
+// ...
+// Initialize Firebase Auth
+
 abstract class BaseActivity : AppCompatActivity() {
+
+
 
     private lateinit var actionToExecute: (() -> Unit)
 

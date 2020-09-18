@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content">
 
-	<com.example.colabore.widget.AppTextInputLayout
+	<com.example.colabore.ui.widget.AppTextInputLayout
 		android:id="@+id/defaultAtil"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -23,5 +23,5 @@
 			android:maxLines="1"
 			android:theme="@style/DefaultEditText"
 			tools:text="@tools:sample/lorem/random" />
-	</com.example.colabore.widget.AppTextInputLayout>
+	</com.example.colabore.ui.widget.AppTextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
