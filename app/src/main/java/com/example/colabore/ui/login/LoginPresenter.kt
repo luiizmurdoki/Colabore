@@ -1,5 +1,6 @@
 package com.example.colabore.ui.login
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -9,6 +10,8 @@ import android.util.LogPrinter
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.colabore.R
+import com.example.colabore.utils.Constants
+import com.example.colabore.utils.extension.unmask
 import com.example.colabore.utils.validations.IsCpf
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -25,6 +28,7 @@ import io.reactivex.internal.util.HalfSerializer.onComplete
 
 var database: DatabaseReference = Firebase.database.reference
 private lateinit var auth: FirebaseAuth
+private var context = Activity()
 
 class LoginPresenter : LoginContract.Presenter {
 
@@ -38,38 +42,17 @@ class LoginPresenter : LoginContract.Presenter {
     }
 
     override fun getUser(cpf: String, password:String) {
-        /* database.child("usuarios")
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                view?.displayError("Deu bom carai")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                view?.displayError("Deu ruim")
-            }
-        })*/
-
-/*
-    Auth.signInWithEmailAndPassword(email, password)
-    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull (Task<AuthResult>) task) {
-            if (task.isSuccessful()) {
-                // Sign in success, update UI with the signed-in user's information
-                Log.d(TAG, "signInWithEmail:success");
-                FirebaseUser user = mAuth.getCurrentUser();
-                updateUI(user);
-            } else {
-                // If sign in fails, display a message to the user.
-                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-                    Toast.LENGTH_SHORT).show();
-                updateUI(null);
-            }
-        }
-    })
-*/
+            auth.signInWithEmailAndPassword(cpf.unmask()+ Constants.RESQUEST, password)
+                .addOnCompleteListener(context) { }
+                .addOnSuccessListener(context) {
+                    val currentUser = FirebaseAuth.getInstance().currentUser
+                    view?.openHome()
+                }
+                .addOnFailureListener(context) {
+                    view?.displayError(null)
+                }
     }
+
     override fun detachView() {
         view = null
     }

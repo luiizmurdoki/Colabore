@@ -1,4 +1,4 @@
-package com.example.colabore.ui.utils.validations;
+package com.example.colabore.utils.validations;
 
 /**
  * Created by mobile2you on 12/08/16.

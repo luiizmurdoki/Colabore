@@ -7,7 +7,8 @@ import com.example.colabore.utils.validations.IsCpf
 
 interface LoginContract {
     interface View : BaseView<Presenter> {
-        fun displayError(msg: String)
+        fun displayError(msg: String?)
+        fun openHome()
     }
 
     interface Presenter : BasePresenter<View> {

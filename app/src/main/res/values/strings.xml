@@ -5,6 +5,7 @@
     <string name="welcome_login">Bem vindo ao Colabore!</string>
     <string name="forgot_password">Esqueci minha senha</string>
     <string name="fields_error">Certifique-se de que todos os campos estão preenchidos!</string>
+    <string name="login_error">Usuário não encontrado!</string>
 
     <!--BUTTONS-->
     <string name="btn_continue">Continuar</string>

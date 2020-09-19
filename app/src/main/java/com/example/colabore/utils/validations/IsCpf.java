@@ -1,4 +1,4 @@
-package com.example.colabore.ui.utils.validations;
+package com.example.colabore.utils.validations;
 
 public class IsCpf {
 

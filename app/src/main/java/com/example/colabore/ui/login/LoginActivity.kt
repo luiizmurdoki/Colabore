@@ -6,6 +6,10 @@ import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.dialogmessage.MessageBottomDialog
 import com.example.colabore.ui.main.MainActivity
+import com.example.colabore.utils.Constants
+import com.example.colabore.utils.Constants.RESQUEST
+import com.example.colabore.utils.extension.startActivitySlideTransition
+import com.example.colabore.utils.extension.unmask
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthResult
@@ -53,13 +57,13 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
 
     private fun setLoginBtnClick() {
         if (allFieldsValid()) {
-           getUser(loginCpfEt.text, loginPasswordEt.text)
+           presenter.getUser(loginCpfEt.text, loginPasswordEt.text)
         } else {
             displayError(msg = getString(R.string.fields_error))
         }
     }
 
-    private fun openHome(){
+    override fun openHome(){
         val intent = Intent(this, MainActivity::class.java).apply{}
         startActivity(intent)
     }
@@ -73,34 +77,12 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         presenter.detachView()
     }
 
-    private fun getUser(cpf: String, password:String){
-
-        auth.signInWithEmailAndPassword(cpf+"@colabore.com", password)
-            .addOnCompleteListener(this, { task: Task<AuthResult> -> })
-            .addOnSuccessListener(this) { authResult: AuthResult? ->
-                val currentUser = FirebaseAuth.getInstance().currentUser
-                displayError("Deu bom")
-            }
-            .addOnFailureListener(
-                this
-            ) { exception: Exception ->
-                displayError("Deu ruim")
-            }
-    }
-
-    override fun displayError(msg: String){
+    override fun displayError(msg: String?){
         MessageBottomDialog(this, getString(R.string.placeholder_error_title),
-            msg,
+            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg                              ,
             getString(R.string.action_ok), {}, null, {}, isCancelable = true
         ).show()
     }
-
-/*    override fun openHome() {
-        startActivitySlideTransition(createHomeIntent())
-    }*/
-
-
-
 
 }
 

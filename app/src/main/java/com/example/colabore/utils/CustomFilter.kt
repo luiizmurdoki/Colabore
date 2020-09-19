@@ -1,4 +1,4 @@
-package com.example.colabore.ui.utils
+package com.example.colabore.utils
 
 import android.text.InputFilter
 import android.text.Spanned

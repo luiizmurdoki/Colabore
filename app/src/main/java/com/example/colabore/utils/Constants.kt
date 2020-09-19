@@ -1,4 +1,4 @@
-package com.example.colabore.ui.utils
+package com.example.colabore.utils
 
 import com.example.colabore.BuildConfig
 
@@ -8,9 +8,6 @@ object Constants {
     const val GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=$PACKAGE_NAME"
     const val GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/"
 
-    const val WHATSAPP_LINK = "https://wa.me/551135281111"
-    const val WHATSAPP_PACKAGE_NAME = "com.whatsapp"
-
     const val AUTHORITY = Constants.PACKAGE_NAME + ".fileprovider"
 
     //GENERAL
@@ -18,6 +15,8 @@ object Constants {
     const val COUNTRY_BR = "BR"
     const val INCOME_VALUE = 1F
     const val EMPTY = ""
+    const val RESQUEST ="@colaboreapp.com"
+
     //ARG
     const val ARG_EXTRACT_TYPE = "$PACKAGE_NAME.ARG_EXTRACT_TYPE"
     const val ARG_END_DATE = "$PACKAGE_NAME.ARG_END_DATE"
