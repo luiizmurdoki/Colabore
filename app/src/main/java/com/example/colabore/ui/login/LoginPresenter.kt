@@ -25,8 +25,6 @@ import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 import io.reactivex.internal.util.HalfSerializer.onComplete
 
-
-var database: DatabaseReference = Firebase.database.reference
 private lateinit var auth: FirebaseAuth
 private var context = Activity()
 
