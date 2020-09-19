@@ -31,4 +31,19 @@
         <item name="android:statusBarColor">@color/colorWhite</item>
     </style>
 
+    <style name="DefaultAppTextInputLayout">
+        <item name="android:textColor">@color/colorblack</item>
+        <item name="android:textColorHint">@color/colorblack</item>
+        <item name="colorAccent">@color/colorblack</item>
+    </style>
+    <style name="DefaultEditText">
+        <item name="colorAccent">@color/colorSpace</item>
+        <item name="android:textColor">@color/colorblack</item>
+        <item name="colorControlNormal">@color/colorSpace</item>
+        <item name="colorControlHighlight">@color/colorSpace</item>
+        <item name="colorControlActivated">@color/colorBlackCustom</item>
+    </style>
+
+
+
 </resources>

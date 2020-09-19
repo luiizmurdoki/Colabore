@@ -7,9 +7,21 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
-    android:paddingStart="@dimen/horizontal_margin_large"
-    android:paddingEnd="@dimen/horizontal_margin_large"
-    tools:context=".login.LoginActivity">
+    tools:context=".ui.login.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/horizontal_margin_large"
+            android:paddingEnd="@dimen/horizontal_margin_large">
 
             <ImageView
                 android:id="@+id/logoIv"
@@ -21,34 +33,37 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_earth" />
 
-            <EditText
+            <com.example.colabore.ui.widget.DefaultEditText
                 android:id="@+id/loginCpfEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/vertical_margin_x_large"
-                android:textColorHint="@color/colorblack"
-                android:drawableStart="@drawable/ic_id_card"
-                android:drawablePadding="@dimen/small_margin"
-                android:padding="@dimen/small_image"
-                android:hint="@string/hint_cpf"
+                android:layout_marginTop="@dimen/vertical_margin_large"
+                android:textColor="@color/colorblack"
+                app:etEmptinessIsValid="false"
+                text = "25316577035"
+                app:etInputTextType="cpfOrCnpj"
+                app:hint="@string/hint_cpf"
+                app:layout_constraintBottom_toTopOf="@id/loginPasswordEt"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/logoIv"
-                tools:ignore="Autofill"
-                android:inputType="number" />
+                app:textColor="@color/colorblack"
+                app:toggleColor="@color/colorblack" />
 
-            <EditText
+            <com.example.colabore.ui.widget.DefaultEditText
                 android:id="@+id/loginPasswordEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
-                android:padding="@dimen/small_image"
-                android:drawableStart="@drawable/ic_lock"
-                android:drawablePadding="@dimen/small_margin"
-                android:hint="@string/hint_password"
-                android:textColorHint="@color/colorblack"
+                app:etEmptinessIsValid="false"
+                app:etInputTextType="name"
+                app:hint="@string/hint_password"
+                text = "Teste123"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginCpfEt"
-                tools:visibility="visible"
-                tools:ignore="Autofill"
-                android:inputType="textPassword" />
+                app:textColor="@color/colorblack"
+                app:toggleColor="@color/colorGreen"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/loginForgotPasswordTv"
@@ -70,6 +85,8 @@
                 android:layout_marginBottom="@dimen/vertical_margin"
                 android:text="@string/btn_continue"
                 app:layout_constraintBottom_toTopOf="@+id/loginRegisterBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginForgotPasswordTv"
                 app:layout_constraintVertical_bias="1"
                 app:layout_constraintVertical_chainStyle="packed" />
@@ -80,8 +97,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
-                android:layout_marginBottom="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/small_image_home"
                 android:text="@string/btn_sign_in"
-                app:layout_constraintTop_toBottomOf="@id/loginSigninBtn"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginSigninBtn" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

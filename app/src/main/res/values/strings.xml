@@ -4,6 +4,8 @@
     <!--LOGIN-->
     <string name="welcome_login">Bem vindo ao Colabore!</string>
     <string name="forgot_password">Esqueci minha senha</string>
+    <string name="fields_error">Certifique-se de que todos os campos estão preenchidos!</string>
+    <string name="login_error">Usuário não encontrado!</string>
 
     <!--BUTTONS-->
     <string name="btn_continue">Continuar</string>
@@ -46,6 +48,45 @@
 
     <!--PAYMENT-->
     <string name="payment_title">Valor da Doação</string>
+
+    <!--MENU-->
+    <string name="faq_title">FAQ</string>
+    <string name="open_settings_error">Não foi possível abrir as configurações do aplicativo. Acesse através do menu.</string>
+
+
+    <!--SNACKBAR-->
+    <string name="placeholder_error_label">Houve um erro inesperado.</string>
+    <string name="placeholder_error_button_label">Tentar novamente</string>
+    <string name="placeholder_empty_label">Não existem resultados.</string>
+    <string name="placeholder_empty_title">Erro!</string>
+    <string name="placeholder_error_title">Ops!</string>
+
+
+    <!--ACTIONS-->
+    <string name="yes">Sim</string>
+    <string name="cancel">Cancelar</string>
+    <string name="action_share">Compartilhar</string>
+    <string name="action_copy_code">Copiar código</string>
+    <string name="action_ok">OK</string>
+    <string name="action_apply">Aplicar</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_activate">Ativar</string>
+    <string name="action_enable">Habilitar</string>
+    <string name="action_disable">Desabilitar</string>
+    <string name="action_conclude">Concluir</string>
+    <string name="action_continue">Continuar</string>
+    <string name="action_start">Início</string>
+    <string name="action_send">Enviar</string>
+
+
+    <!--AppTextInputLayout DEFAULT FEEDBACKS-->
+    <string name="network_error_unknown">Erro desconhecido, não foi possível completar sua requisição.</string>
+    <string name="network_error_session">Sua sessão expirou\nEntre novamente</string>
+    <string name="apptextinputlayout_invalid_field">%s inválido.</string>
+    <string name="apptextinputlayout_empty_field">%s inválido.</string>
+    <string name="apptextinputlayout_regex_field">%s não atende aos critérios exigidos.</string>
+    <string name="apptextinputlaoyut_password_field">%1$s não pode conter menos de %2$d caracteres.</string>
 
 
 
