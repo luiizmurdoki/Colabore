@@ -38,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/default_padding"
-                android:text="Edu"
                 android:textColor="@color/colorBlackCustom"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_display"
@@ -51,6 +50,7 @@
         android:id="@+id/homeHeaderAvatarIv"
         android:layout_width="@dimen/home_header_avatar_size"
         android:layout_height="@dimen/home_header_avatar_size"
+        android:src="@drawable/ic_earth"
         android:layout_marginEnd="@dimen/small_image"
         tools:src="@tools:sample/avatars" />
 

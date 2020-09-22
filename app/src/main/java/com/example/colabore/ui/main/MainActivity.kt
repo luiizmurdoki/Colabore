@@ -2,6 +2,9 @@ package com.example.colabore.ui.main
 
 import android.os.Bundle
 import com.example.colabore.R
+import com.example.colabore.model.PersistUserInformation
+import com.example.colabore.model.PersistUserInformation.cpf
+import com.example.colabore.model.PreferencesHelper
 import com.example.colabore.model.UserObject
 import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.dialogmessage.MessageBottomDialog
@@ -22,14 +25,9 @@ class MainActivity :  BaseActivity(), MainContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.getNameUser()
+        presenter.getDataUser(cpf())
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        presenter.getNameUser()
     }
 
     override fun displayName(name:String?){

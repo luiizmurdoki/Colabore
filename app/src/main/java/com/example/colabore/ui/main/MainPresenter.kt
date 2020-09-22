@@ -5,6 +5,7 @@ import android.content.ContentValues.TAG
 import android.graphics.ColorSpace
 import android.util.Log
 import com.example.colabore.model.UserObject
+import com.example.colabore.utils.extension.unmask
 import com.google.android.gms.common.api.Api
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -26,8 +27,32 @@ class MainPresenter : MainContract.Presenter {
     private var view: MainContract.View? = null
 
 
-    override  fun getNameUser() {
-        view?.displayName(name = user.nome)
+    override fun getDataUser(cpf: String) {
+        db.collection("usuarios").document(cpf.unmask()).get()
+            .addOnSuccessListener{
+                val document = it.data
+                val user = it.toObject<UserObject>(UserObject ::class.java)
+                view?.displayName(name = user?.nome)
+                saveUserModel(user)
+                Log.w(TAG, "$user")
+            }
+            .addOnFailureListener{ exception->
+                Log.w(TAG, "Erro com Dados do usuario", exception)
+            }
+
+    }
+
+    private fun saveUserModel(user : UserObject?){
+        UserObject(
+            cpf = user?.cpf,
+            nome = user?.nome,
+            dataNascimento =user?.dataNascimento,
+            email = user?.email ,
+            face = user?.face ,
+            telefone = user?.telefone ,
+            senha = user?.senha
+        )
+
     }
 
     override fun attachView(mvpView: MainContract.View?) {

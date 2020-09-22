@@ -10,6 +10,7 @@ import android.util.LogPrinter
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.colabore.R
+import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.model.UserObject
 import com.example.colabore.ui.main.db
 import com.example.colabore.utils.Constants
@@ -47,39 +48,12 @@ class LoginPresenter : LoginContract.Presenter {
             auth.signInWithEmailAndPassword(cpf.unmask()+ Constants.RESQUEST, password)
                 .addOnCompleteListener(context) { }
                 .addOnSuccessListener(context) {
-                    val currentUser = FirebaseAuth.getInstance().currentUser
-                    getDataUser(cpf.unmask())
+                    PersistUserInformation.cpf(cpf.unmask())
+                    view?.openHome()
                 }
                 .addOnFailureListener(context) {
                     view?.displayError(null)
                 }
-    }
-
-     private fun getDataUser(cpf: String) {
-         db.collection("usuarios").document(cpf).get()
-            .addOnSuccessListener{
-                val document = it.data
-                val user = it.toObject<UserObject>(UserObject ::class.java)
-                saveUserModel(user)
-                view?.openHome()
-                Log.w(TAG, "$user")
-            }
-            .addOnFailureListener{ exception->
-                Log.w(TAG, "Erro com Dados do usuario", exception)
-            }
-
-    }
-
-    private fun saveUserModel(user : UserObject?){
-        UserObject(
-            nome = user?.nome,
-            dataNascimento =user?.dataNascimento,
-            email = user?.email ,
-            face = user?.face ,
-            telefone = user?.telefone ,
-            senha = user?.senha
-        )
-
     }
 
     override fun detachView() {

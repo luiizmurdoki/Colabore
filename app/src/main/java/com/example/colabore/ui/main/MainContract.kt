@@ -10,6 +10,6 @@ interface MainContract{
     }
 
     interface Presenter : BasePresenter<View> {
-        fun getNameUser()
+        fun getDataUser(cpf: String)
     }
 }

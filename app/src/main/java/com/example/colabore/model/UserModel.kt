@@ -3,6 +3,7 @@ package com.example.colabore.model
 import java.io.Serializable
 
 data class UserObject (
+    var cpf : String? ="",
     var dataNascimento: String? = "",
     var email: String? = "",
     var face: String? = "",
@@ -10,4 +11,4 @@ data class UserObject (
     var senha:String? = "",
     var telefone: String? = ""
 
-) : Serializable
+)
