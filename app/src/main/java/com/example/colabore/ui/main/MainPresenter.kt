@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.ContentValues.TAG
 import android.graphics.ColorSpace
 import android.util.Log
+import com.example.colabore.model.CardModel
 import com.example.colabore.model.UserObject
 import com.example.colabore.utils.extension.unmask
 import com.google.android.gms.common.api.Api
@@ -52,6 +53,20 @@ class MainPresenter : MainContract.Presenter {
             telefone = user?.telefone ,
             senha = user?.senha
         )
+
+    }
+
+    override fun loadBanners() {
+        db.collection("ongs").get()
+            .addOnSuccessListener{
+                val banners = it.toObjects<CardModel>(CardModel ::class.java)
+                view?.displayCards(banners)
+                Log.w(TAG, "$banners")
+            }
+            .addOnFailureListener{ exception->
+                Log.w(TAG, "Erro com Dados do usuario", exception)
+            }
+
 
     }
 

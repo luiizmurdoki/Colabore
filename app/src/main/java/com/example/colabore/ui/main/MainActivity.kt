@@ -1,7 +1,9 @@
 package com.example.colabore.ui.main
 
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colabore.R
+import com.example.colabore.model.CardModel
 import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.model.PersistUserInformation.cpf
 import com.example.colabore.model.PreferencesHelper
@@ -10,8 +12,11 @@ import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.dialogmessage.MessageBottomDialog
 import com.example.colabore.ui.login.LoginContract
 import com.example.colabore.ui.login.LoginPresenter
+import com.example.colabore.ui.main.adapter.MainCardAdapter
+import com.example.colabore.utils.extension.setup
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.home_header_view.*
 
 class MainActivity :  BaseActivity(), MainContract.View {
@@ -26,12 +31,26 @@ class MainActivity :  BaseActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         presenter.getDataUser(cpf())
+        presenter.loadBanners()
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
     }
 
+
+    private val cardAdapter by lazy {
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        val adapter = MainCardAdapter(this)
+        bannersRv.setup(adapter, layoutManager)
+        bannersRv.isNestedScrollingEnabled = false
+        adapter
+    }
+
     override fun displayName(name:String?){
         homeHeaderNameTv.text = name
+    }
+
+    override fun displayCards(items: List<CardModel>) {
+        cardAdapter.list = items
     }
 
     override fun displayError(msg: String?){

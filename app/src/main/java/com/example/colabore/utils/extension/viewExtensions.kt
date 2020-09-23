@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import com.example.colabore.utils.CustomLinearLayoutManager
 
 fun View.setVisible(visible: Boolean, useInvisible: Boolean = false) {
     visibility = when {
@@ -32,6 +33,17 @@ fun EditText.afterTextChanged(onTextChanged: ((String) -> Unit)) {
 
         }
     })
+}
+
+fun androidx.recyclerview.widget.RecyclerView.setup(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<in androidx.recyclerview.widget.RecyclerView.ViewHolder>,
+                                                    layoutManager: androidx.recyclerview.widget.RecyclerView.LayoutManager? = CustomLinearLayoutManager(this.context),
+                                                    decoration: androidx.recyclerview.widget.RecyclerView.ItemDecoration? = null,
+                                                    hasFixedSize: Boolean = true) {
+
+    this.adapter = adapter
+    this.layoutManager = layoutManager
+    this.setHasFixedSize(hasFixedSize)
+    decoration?.let { this.addItemDecoration(it) }
 }
 
 fun EditText.onImeActionDone(onAction: () -> Unit) {
