@@ -31,6 +31,11 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
+            android:name="com.example.colabore.ui.description.DescriptionActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:name="com.example.colabore.ui.main.MainActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">

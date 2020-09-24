@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
+        app:cardElevation="@dimen/corner_large"
         app:cardCornerRadius="@dimen/corner_large"
         android:layout_margin="@dimen/small_image"
         app:layout_constraintDimensionRatio="16:9"
@@ -21,17 +22,31 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardBackground"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/homeImageIv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/corner_small"
+                android:layout_marginEnd="@dimen/corner_small"
+                app:layout_constraintBottom_toTopOf="@+id/ongTextTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ongTextTv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_header_avatar_size"
+                android:background="@color/colorGreen"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -39,4 +54,3 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-		
