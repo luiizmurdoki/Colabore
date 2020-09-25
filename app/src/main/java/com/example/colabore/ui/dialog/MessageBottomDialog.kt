@@ -1,4 +1,4 @@
-package com.example.colabore.ui.dialogmessage
+package com.example.colabore.ui.dialog
 
 import android.content.Context
 import android.content.pm.ActivityInfo

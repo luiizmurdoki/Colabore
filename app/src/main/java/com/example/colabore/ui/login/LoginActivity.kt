@@ -4,15 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.dialogmessage.MessageBottomDialog
+import com.example.colabore.ui.dialog.LoadingDialog
+import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.main.MainActivity
-import com.example.colabore.utils.Constants
-import com.example.colabore.utils.Constants.RESQUEST
-import com.example.colabore.utils.extension.startActivitySlideTransition
-import com.example.colabore.utils.extension.unmask
-import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
@@ -75,6 +70,10 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     override fun onDestroy() {
         super.onDestroy()
         presenter.detachView()
+    }
+
+    override  fun displayLoading(dimiss : Boolean){
+        LoadingDialog(this , dismissAction = dimiss).show()
     }
 
     override fun displayError(msg: String?){

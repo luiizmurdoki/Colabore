@@ -1,12 +1,11 @@
 package com.example.colabore.ui.description
 
-import android.content.Intent
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.dialogmessage.MessageBottomDialog
+import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_ngo_description.*

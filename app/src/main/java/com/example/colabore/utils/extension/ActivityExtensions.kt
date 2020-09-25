@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import com.example.colabore.R
-import com.example.colabore.ui.dialogmessage.MessageBottomDialog
+import com.example.colabore.ui.dialog.MessageBottomDialog
 import java.io.Serializable
 
 fun Activity.hideKeyboard() {

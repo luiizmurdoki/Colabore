@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialogBackgroundCv"
+    app:cardCornerRadius="@dimen/roundness_partial">
+
+    <LinearLayout
+        android:id="@+id/dialogContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/vertical_margin">
+
+    <!--    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_Q2FX6B.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>-->
+
+        <ProgressBar
+            android:id="@+id/progressButtonProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/progressButtonTextView"
+            android:layout_alignBottom="@id/progressButtonTextView"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -4,14 +4,9 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
-import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.model.PersistUserInformation.cpf
-import com.example.colabore.model.PreferencesHelper
-import com.example.colabore.model.UserObject
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.dialogmessage.MessageBottomDialog
-import com.example.colabore.ui.login.LoginContract
-import com.example.colabore.ui.login.LoginPresenter
+import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.main.adapter.MainCardAdapter
 import com.example.colabore.utils.extension.setup
 import com.google.firebase.FirebaseApp
