@@ -30,27 +30,31 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginTop="@dimen/small_image_home"
+        android:layout_marginBottom="@dimen/small_image_home"
         app:layout_constraintTop_toBottomOf="@+id/imageNgoIv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scrollSv"
         tools:text="Gabriela Santiago" />
 
     <ScrollView
+        android:id="@+id/scrollSv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:fillViewport="true"
+        android:layout_margin="@dimen/small_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ngoName">
 
         <TextView
             android:id="@+id/drescripitionTv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center"
             android:textColor="@color/colorblack"
-            android:textSize="@dimen/text_title"
-            android:layout_margin="@dimen/small_image"
+            android:textSize="@dimen/text_subtitle"
             tools:listitem="@layout/item_profile" />
 
     </ScrollView>
