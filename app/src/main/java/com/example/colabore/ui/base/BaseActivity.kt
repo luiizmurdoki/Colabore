@@ -9,6 +9,7 @@ import android.provider.Settings
 import android.view.MenuItem
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.colabore.model.PreferencesHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 

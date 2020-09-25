@@ -45,7 +45,7 @@
     <dimen name="roundness_full">1000dp</dimen>
     <dimen name="roundness_partial">10dp</dimen>
     <dimen name="roundness_minimal">4dp</dimen>
-
+    <dimen name="roundness_home">16dp</dimen>
     <dimen name="multiline_edit_text_height">60dp</dimen>
 
     <dimen name="small_button">100dp</dimen>
@@ -65,6 +65,7 @@
 
     <dimen name="small_image">16dp</dimen>
     <dimen name="small_image_home">24dp</dimen>
+    <dimen name="small_image_big">32dp</dimen>
     <dimen name="small_margin">10dp</dimen>
 
     <dimen name="gas_stations_map_icons">32dp</dimen>

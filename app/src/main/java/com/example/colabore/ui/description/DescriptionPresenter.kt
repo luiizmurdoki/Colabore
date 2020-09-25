@@ -1,4 +1,4 @@
-package com.example.colabore.ui.login
+package com.example.colabore.ui.description
 
 import android.app.Activity
 import android.content.ContentValues.TAG
@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.colabore.R
 import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.model.UserObject
+import com.example.colabore.ui.login.LoginContract
 import com.example.colabore.ui.main.db
 import com.example.colabore.utils.Constants
 import com.example.colabore.utils.extension.unmask
@@ -33,27 +34,15 @@ private lateinit var auth: FirebaseAuth
 var db = FirebaseFirestore.getInstance()
 private var context = Activity()
 
-class LoginPresenter : LoginContract.Presenter {
+class DescriptionPresenter : DescriptionContract.Presenter {
 
-    private var view: LoginContract.View? = null
+    private var view: DescriptionContract.View? = null
 
 
-    override fun attachView(mvpView: LoginContract.View?) {
+    override fun attachView(mvpView: DescriptionContract.View?) {
         auth = FirebaseAuth.getInstance()
         val currentUser: FirebaseUser? = auth.getCurrentUser()
         view = mvpView
-    }
-
-    override fun getUser(cpf: String, password:String) {
-            auth.signInWithEmailAndPassword(cpf.unmask()+ Constants.RESQUEST, password)
-                .addOnCompleteListener(context) { }
-                .addOnSuccessListener(context) {
-                    PersistUserInformation.cpf(cpf.unmask())
-                    view?.openHome()
-                }
-                .addOnFailureListener(context) {
-                    view?.displayError(null)
-                }
     }
 
     override fun detachView() {
