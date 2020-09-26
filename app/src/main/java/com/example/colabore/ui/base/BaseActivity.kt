@@ -47,19 +47,8 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    //KEYBOARD METHODS
-
-    /*private fun checkTimer() {
-        if (this.localClassName != LoginActivity::class.java.name) {
-            InactivityTimer.start()
-        } else {
-            InactivityTimer.cancel()
-        }
-    }*/
-
     //TOOLBAR METHODS
-    fun setToolbar(title: String, displayHomeAsUpEnabled: Boolean) {
-        setToolbar(title)
+    fun setToolbar(displayHomeAsUpEnabled: Boolean) {
         supportActionBar!!.setDisplayHomeAsUpEnabled(displayHomeAsUpEnabled)
     }
 

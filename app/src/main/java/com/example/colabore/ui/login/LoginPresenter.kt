@@ -59,6 +59,8 @@ class LoginPresenter : LoginContract.Presenter {
                 }
     }
 
+
+
     override fun detachView() {
         view = null
     }

@@ -9,6 +9,7 @@ import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_ngo_description.*
+import kotlinx.android.synthetic.main.partial_toolbar.*
 
 
 class DescriptionActivity :  BaseActivity(), DescriptionContract.View {
@@ -26,10 +27,17 @@ class DescriptionActivity :  BaseActivity(), DescriptionContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ngo_description)
         auth = FirebaseAuth.getInstance()
+        setListerners()
         getExtras()
         displayDescription()
         FirebaseApp.initializeApp(this)
 
+    }
+
+    fun setListerners(){
+        include2.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun getExtras(){
@@ -47,6 +55,10 @@ class DescriptionActivity :  BaseActivity(), DescriptionContract.View {
         ).into(imageNgoIv)
         ngoName.text = title.toString()
         drescripitionTv.text = desc.toString()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     override fun displayError(msg: String?){

@@ -66,11 +66,17 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     override fun openHome(){
         val intent = Intent(this, MainActivity::class.java).apply{}
         startActivity(intent)
+        finish()
     }
 
     private fun allFieldsValid(): Boolean {
         return loginCpfEt.text.isNotBlank() && loginPasswordEt.text.isNotBlank()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -79,7 +85,7 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
 
     override  fun displayLoading(close : Boolean){
             if(close) progressDialog.dialog.dismiss()
-            else progressDialog.show(this,"Perai Carai...")
+            else progressDialog.show(this)
     }
 
     override fun displayError(msg: String?){

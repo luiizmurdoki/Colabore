@@ -34,13 +34,9 @@ class LoadingDialog {
             view.cp_title.text = title
         }
 
-        // Card Color
-        view.cp_cardview.setCardBackgroundColor(Color.parseColor("#70000000"))
-
         // Progress Bar Color
         setColorFilter(view.cp_pbar.indeterminateDrawable, ResourcesCompat.getColor(context.resources, R.color.colorPrimary, null))
 
-        // Text Color
         view.cp_title.setTextColor(Color.WHITE)
 
         dialog = CustomDialog(context)
@@ -60,7 +56,6 @@ class LoadingDialog {
 
     class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialogTheme) {
         init {
-            // Set Semi-Transparent Color for Dialog Background
             window?.decorView?.rootView?.setBackgroundResource(R.color.colorWhite)
             window?.decorView?.setOnApplyWindowInsetsListener { _, insets ->
                 insets.consumeSystemWindowInsets()
