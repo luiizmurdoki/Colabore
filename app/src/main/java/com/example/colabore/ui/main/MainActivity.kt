@@ -6,6 +6,7 @@ import com.example.colabore.R
 import com.example.colabore.model.CardModel
 import com.example.colabore.model.PersistUserInformation.cpf
 import com.example.colabore.ui.base.BaseActivity
+import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.main.adapter.MainCardAdapter
 import com.example.colabore.utils.extension.setup
@@ -16,6 +17,7 @@ import kotlinx.android.synthetic.main.home_header_view.*
 
 class MainActivity :  BaseActivity(), MainContract.View {
     private lateinit var auth: FirebaseAuth
+    private val progressDialog = LoadingDialog()
 
 
     private val presenter: MainContract.Presenter by lazy {
@@ -46,6 +48,11 @@ class MainActivity :  BaseActivity(), MainContract.View {
 
     override fun displayCards(items: List<CardModel>) {
         cardAdapter.list = items
+    }
+
+    override  fun displayLoading(close : Boolean){
+        if(close) progressDialog.dialog.dismiss()
+        else progressDialog.show(this,"Perai Carai...")
     }
 
     override fun displayError(msg: String?){

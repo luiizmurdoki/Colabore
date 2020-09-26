@@ -9,7 +9,7 @@ interface LoginContract {
     interface View : BaseView<Presenter> {
         fun displayError(msg: String?)
         fun openHome()
-        fun displayLoading(dimiss : Boolean)
+        fun displayLoading(close : Boolean)
     }
 
     interface Presenter : BasePresenter<View> {

@@ -32,7 +32,6 @@ class MessageBottomDialog(context: Context,
         setParams()
         setCancelable(isCancelable)
 
-
         setOnShowListener {
             val sheet = findViewById<FrameLayout>(R.id.design_bottom_sheet)
             BottomSheetBehavior.from(sheet).state = BottomSheetBehavior.STATE_EXPANDED

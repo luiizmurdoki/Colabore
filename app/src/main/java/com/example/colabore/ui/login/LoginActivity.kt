@@ -1,5 +1,8 @@
 package com.example.colabore.ui.login
 
+import android.app.Dialog
+import android.app.ProgressDialog
+import android.app.ProgressDialog.*
 import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.R
@@ -11,15 +14,17 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.progressDialog
 
 
 class LoginActivity :  BaseActivity(), LoginContract.View {
 
     private lateinit var auth: FirebaseAuth
-
+    private val progressDialog = LoadingDialog()
     private val presenter: LoginContract.Presenter by lazy {
         LoginPresenter().apply { attachView(this@LoginActivity) }
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,8 +77,9 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         presenter.detachView()
     }
 
-    override  fun displayLoading(dimiss : Boolean){
-        LoadingDialog(this , dismissAction = dimiss).show()
+    override  fun displayLoading(close : Boolean){
+            if(close) progressDialog.dialog.dismiss()
+            else progressDialog.show(this,"Perai Carai...")
     }
 
     override fun displayError(msg: String?){
