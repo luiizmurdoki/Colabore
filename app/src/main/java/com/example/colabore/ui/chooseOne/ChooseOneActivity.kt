@@ -1,40 +1,36 @@
-package com.example.colabore.ui.login
+package com.example.colabore.ui.chooseOne
 
 import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.chooseOne.ChooseOneActivity
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
+import com.example.colabore.ui.login.LoginActivity
 import com.example.colabore.ui.main.MainActivity
+import com.example.colabore.ui.signUp.SignUpActivity
+import com.example.colabore.ui.splash.SplashActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_choose_one.*
 
 
-class LoginActivity :  BaseActivity(), LoginContract.View {
+class ChooseOneActivity :  BaseActivity(), ChooseOneContract.View {
 
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
-    private val presenter: LoginContract.Presenter by lazy {
-        LoginPresenter().apply { attachView(this@LoginActivity) }
+    private val presenter: ChooseOneContract.Presenter by lazy {
+        ChooseOnePresenter().apply { attachView(this@ChooseOneActivity) }
     }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-        setText()
+        setContentView(R.layout.activity_choose_one)
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
         setListeners()
-    }
-
-    private fun setText(){
-        loginCpfEt.setText("25316577035")
-        loginPasswordEt.setText("Teste123")
     }
 
     override fun onStart() {
@@ -48,33 +44,19 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     }
 
     private fun setListeners(){
-        loginSigninBtn.setOnClickListener { setLoginBtnClick() }
-        loginRegisterBtn.setOnClickListener { openChoose()   }
-
+        donorCv.setOnClickListener { openDonorSignUp() }
+        ngoCv.setOnClickListener { openNgoSignUp() }
+        include2.setOnClickListener { onBackPressed() }
     }
 
-
-    private fun setLoginBtnClick() {
-        if (allFieldsValid()) {
-           presenter.getUser(loginCpfEt.text, loginPasswordEt.text)
-        } else {
-            displayError(msg = getString(R.string.fields_error))
-        }
-    }
-
-    override fun openHome(){
-        val intent = Intent(this, MainActivity::class.java).apply{}
-        startActivity(intent)
-        finish()
-    }
-
-    private fun openChoose(){
-        val intent = Intent(this, ChooseOneActivity::class.java).apply{}
+    private fun openDonorSignUp(){
+        val intent = Intent(this, SignUpActivity::class.java)
         startActivity(intent)
     }
 
-    private fun allFieldsValid(): Boolean {
-        return loginCpfEt.text.isNotBlank() && loginPasswordEt.text.isNotBlank()
+    private fun openNgoSignUp(){
+        /*val intent2 = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)*/
     }
 
     override fun onBackPressed() {
@@ -85,11 +67,6 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     override fun onDestroy() {
         super.onDestroy()
         presenter.detachView()
-    }
-
-    override  fun displayLoading(close : Boolean){
-            if(close) progressDialog.dialog.dismiss()
-            else progressDialog.show(this)
     }
 
     override fun displayError(msg: String?){

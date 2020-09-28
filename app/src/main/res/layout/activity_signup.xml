@@ -1,85 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.signUp.SignUpActivity">
 
-    <include layout="@layout/partial_toolbar" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_image_home"
-        android:layout_marginTop="@dimen/small_image_home"
-        android:text="@string/singup_title"
-        android:textColor="@color/colorblack"
-        android:textSize="@dimen/text_title"
-        android:textStyle="bold"
-
-        />
-
-
-    <EditText
-        android:id="@+id/pfNameDt"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image_home"
-        android:hint="@string/singup_hint_name"
-        android:inputType="text"
-        android:textColorHint="@color/colorblack" />
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/pfCpfDt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image_home"
-        android:hint="@string/hint_cpf"
-        android:inputType="number"
-        android:textColorHint="@color/colorblack" />
+        <include
+            android:id="@+id/toolbarSingup"
+            layout="@layout/partial_toolbar" />
 
-    <EditText
-        android:id="@+id/pfPhoneDt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image_home"
-        android:hint="@string/singup_hint_phone"
-        android:inputType="phone"
-        android:textColorHint="@color/colorblack" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_image_home"
+            android:layout_marginTop="@dimen/small_image_home"
+            android:text="@string/singup_title"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
 
-    <EditText
-        android:id="@+id/pfBirthdayDt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image_home"
-        android:hint="@string/singup_hint_birthday"
-        android:inputType="number"
-        android:textColorHint="@color/colorblack" />
+            />
 
-    <EditText
-        android:id="@+id/pfEmailDt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image_home"
-        android:hint="@string/singup_hint_email"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorblack" />
 
-    <!--Existe somente para deixar o botão no fundo do layout-->
-    <view
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:visibility="invisible" />
+        <EditText
+            android:id="@+id/pfNameDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image_home"
+            android:hint="@string/singup_hint_name"
+            android:inputType="text"
+            android:textColorHint="@color/colorblack"
+            android:importantForAutofill="no"  />
 
-    <Button
-        android:id="@+id/loginSigninBtn"
-        style="@style/ButtonGreenTextWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_image"
-        android:text="@string/btn_continue" />
+        <EditText
+            android:id="@+id/pfCpfDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image_home"
+            android:hint="@string/hint_cpf"
+            android:inputType="number"
+            android:textColorHint="@color/colorblack"
+            android:importantForAutofill="no" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/pfPhoneDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image_home"
+            android:hint="@string/singup_hint_phone"
+            android:inputType="phone"
+            android:textColorHint="@color/colorblack"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/pfBirthdayDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image_home"
+            android:hint="@string/singup_hint_birthday"
+            android:inputType="number"
+            android:textColorHint="@color/colorblack"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/pfEmailDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image_home"
+            android:hint="@string/singup_hint_email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/colorblack"
+            android:importantForAutofill="no" />
+
+        <!--Existe somente para deixar o botão no fundo do layout-->
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/loginSigninBtn"
+            style="@style/ButtonGreenTextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image"
+            android:text="@string/btn_continue" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
