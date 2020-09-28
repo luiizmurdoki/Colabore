@@ -1,4 +1,4 @@
-package com.example.colabore.ui.dialogmessage
+package com.example.colabore.ui.dialog
 
 import android.content.Context
 import android.content.pm.ActivityInfo
@@ -31,7 +31,6 @@ class MessageBottomDialog(context: Context,
         setView()
         setParams()
         setCancelable(isCancelable)
-
 
         setOnShowListener {
             val sheet = findViewById<FrameLayout>(R.id.design_bottom_sheet)

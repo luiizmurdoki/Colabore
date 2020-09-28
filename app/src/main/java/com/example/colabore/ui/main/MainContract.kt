@@ -9,6 +9,7 @@ interface MainContract{
         fun displayError(msg: String?)
         fun displayName(name:String?)
         fun  displayCards(items: List<CardModel>)
+        fun displayLoading(close : Boolean)
     }
 
     interface Presenter : BasePresenter<View> {

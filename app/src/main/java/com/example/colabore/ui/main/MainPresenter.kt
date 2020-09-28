@@ -57,13 +57,16 @@ class MainPresenter : MainContract.Presenter {
     }
 
     override fun loadBanners() {
+        view?.displayLoading(false)
         db.collection("ongs").get()
             .addOnSuccessListener{
+                view?.displayLoading(true)
                 val banners = it.toObjects<CardModel>(CardModel ::class.java)
                 view?.displayCards(banners)
                 Log.w(TAG, "$banners")
             }
             .addOnFailureListener{ exception->
+                view?.displayLoading(true)
                 Log.w(TAG, "Erro com Dados do usuario", exception)
             }
 

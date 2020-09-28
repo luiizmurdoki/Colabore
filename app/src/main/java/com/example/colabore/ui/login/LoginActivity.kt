@@ -1,30 +1,30 @@
 package com.example.colabore.ui.login
 
+import android.app.Dialog
+import android.app.ProgressDialog
+import android.app.ProgressDialog.*
 import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.dialogmessage.MessageBottomDialog
+import com.example.colabore.ui.dialog.LoadingDialog
+import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.main.MainActivity
-import com.example.colabore.utils.Constants
-import com.example.colabore.utils.Constants.RESQUEST
-import com.example.colabore.utils.extension.startActivitySlideTransition
-import com.example.colabore.utils.extension.unmask
-import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.progressDialog
 
 
 class LoginActivity :  BaseActivity(), LoginContract.View {
 
     private lateinit var auth: FirebaseAuth
-
+    private val progressDialog = LoadingDialog()
     private val presenter: LoginContract.Presenter by lazy {
         LoginPresenter().apply { attachView(this@LoginActivity) }
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,15 +66,26 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     override fun openHome(){
         val intent = Intent(this, MainActivity::class.java).apply{}
         startActivity(intent)
+        finish()
     }
 
     private fun allFieldsValid(): Boolean {
         return loginCpfEt.text.isNotBlank() && loginPasswordEt.text.isNotBlank()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
+
     override fun onDestroy() {
         super.onDestroy()
         presenter.detachView()
+    }
+
+    override  fun displayLoading(close : Boolean){
+            if(close) progressDialog.dialog.dismiss()
+            else progressDialog.show(this)
     }
 
     override fun displayError(msg: String?){

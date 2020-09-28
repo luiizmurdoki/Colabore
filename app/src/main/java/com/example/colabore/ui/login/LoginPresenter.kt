@@ -45,16 +45,21 @@ class LoginPresenter : LoginContract.Presenter {
     }
 
     override fun getUser(cpf: String, password:String) {
+        view?.displayLoading(false)
             auth.signInWithEmailAndPassword(cpf.unmask()+ Constants.RESQUEST, password)
                 .addOnCompleteListener(context) { }
                 .addOnSuccessListener(context) {
                     PersistUserInformation.cpf(cpf.unmask())
+                    view?.displayLoading(true)
                     view?.openHome()
                 }
                 .addOnFailureListener(context) {
+                    view?.displayLoading(true)
                     view?.displayError(null)
                 }
     }
+
+
 
     override fun detachView() {
         view = null
