@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:orientation="vertical"
-    tools:context=".ui.signUp.SignUpActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,63 +26,82 @@
             android:text="@string/singup_title"
             android:textColor="@color/colorblack"
             android:textSize="@dimen/text_title"
-            android:textStyle="bold"
-
-            />
+            android:textStyle="bold"/>
 
 
-        <EditText
+        <com.example.colabore.ui.widget.DefaultEditText
             android:id="@+id/pfNameDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_image_home"
-            android:hint="@string/singup_hint_name"
-            android:inputType="text"
-            android:textColorHint="@color/colorblack"
-            android:importantForAutofill="no"  />
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="name"
+            app:hint="@string/singup_hint_name"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
 
-        <EditText
+        <com.example.colabore.ui.widget.DefaultEditText
             android:id="@+id/pfCpfDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_image_home"
-            android:hint="@string/hint_cpf"
-            android:inputType="number"
-            android:textColorHint="@color/colorblack"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="cpf"
+            app:hint="@string/hint_cpf"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
 
-        <EditText
+        <com.example.colabore.ui.widget.DefaultEditText
             android:id="@+id/pfPhoneDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_image_home"
-            android:hint="@string/singup_hint_phone"
-            android:inputType="phone"
-            android:textColorHint="@color/colorblack"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="phone"
+            app:hint="@string/singup_hint_phone"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
 
-        <EditText
+        <com.example.colabore.ui.widget.DefaultEditText
             android:id="@+id/pfBirthdayDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_image_home"
-            android:hint="@string/singup_hint_birthday"
-            android:inputType="number"
-            android:textColorHint="@color/colorblack"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="date"
+            app:hint="@string/singup_hint_birthday"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
 
-        <EditText
+        <com.example.colabore.ui.widget.DefaultEditText
             android:id="@+id/pfEmailDt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_image_home"
-            android:hint="@string/singup_hint_email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/colorblack"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="mail"
+            app:hint="@string/singup_hint_email"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
 
         <!--Existe somente para deixar o botão no fundo do layout-->
-        <view
+        <View
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
