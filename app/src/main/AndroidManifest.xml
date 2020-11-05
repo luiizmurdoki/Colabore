@@ -25,16 +25,31 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.example.colabore.ui.login.LoginActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
         <activity
             android:name="com.example.colabore.ui.description.DescriptionActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.chooseOne.ChooseOneActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.signUp.SignUpActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
         <activity
             android:name="com.example.colabore.ui.main.MainActivity"
             android:theme="@style/StatusBarWhiteTheme"
@@ -43,6 +58,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

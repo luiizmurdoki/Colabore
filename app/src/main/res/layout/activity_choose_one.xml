@@ -7,7 +7,9 @@
     android:background="@color/colorWhite"
     android:orientation="vertical">
 
-    <include layout="@layout/partial_toolbar" />
+    <include
+        android:id="@+id/include2"
+        layout="@layout/partial_toolbar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,6 +35,7 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/small_image"
             android:layout_gravity="center"
+            android:duplicateParentState="true"
             app:cardBackgroundColor="@color/colorGreen"
             app:cardCornerRadius="@dimen/button_deafult">
 
@@ -40,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|top"
+                android:duplicateParentState="true"
                 android:layout_marginTop="@dimen/small_image"
                 android:layout_marginEnd="2dp"
                 android:src="@drawable/ic_donor_card" />
@@ -51,6 +55,7 @@
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center|bottom"
                 android:layout_marginBottom="@dimen/small_image"
+                android:duplicateParentState="true"
                 android:textSize="@dimen/text_subtitle"
                 android:textStyle="bold"/>
 
@@ -63,6 +68,7 @@
             android:layout_height="@dimen/card_height"
             android:layout_weight="1"
             android:layout_margin="@dimen/small_image"
+            android:duplicateParentState="true"
             android:layout_gravity="center"
             app:cardBackgroundColor="@color/colorGreen"
             app:cardCornerRadius="@dimen/button_deafult">
@@ -71,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_insurance"
+                android:duplicateParentState="true"
                 android:layout_gravity="center|top"
                 android:layout_marginStart="@dimen/small_margin"
                 android:layout_marginTop="@dimen/small_image" />
@@ -79,6 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/singup_ngo"
+                android:duplicateParentState="true"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center|bottom"
                 android:layout_marginBottom="@dimen/small_image"
