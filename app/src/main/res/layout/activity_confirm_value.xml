@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/partial_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/horizontal_margin_medium_large">
+
+            <TextView
+                android:id="@+id/titleValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/payment_value"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_headline"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/valueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:textColor="@color/colorGreen"
+                android:textSize="@dimen/text_display"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleValueTv"
+                tools:text="R$ 210"/>
+
+
+            <TextView
+                android:id="@+id/forNgoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:text="Ajudando-a:"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_headline"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/valueTv"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardngoImageIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/vertical_margin"
+                app:cardCornerRadius="@dimen/size_item"
+                android:layout_marginStart="@dimen/corner_small"
+                android:layout_marginEnd="@dimen/corner_small"
+                app:layout_constraintTop_toBottomOf="@+id/forNgoTv">
+
+            <ImageView
+                android:id="@+id/ngoImageIv"
+                android:layout_width="@dimen/profile_picture_size"
+                android:layout_height="@dimen/profile_picture_size"
+                android:layout_gravity="center"
+                tools:src ="@drawable/ic_humanitarian_help" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/nameNgoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:textColor="@color/colorGreen"
+                android:textSize="@dimen/text_display"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardngoImageIv"/>
+
+            <ImageView
+                android:id="@+id/ImageIv"
+                android:layout_width="@dimen/logo_height"
+                android:layout_height="@dimen/logo_height"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginStart="@dimen/corner_small"
+                android:layout_marginEnd="@dimen/corner_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_humanitarian_help"
+                app:layout_constraintBottom_toTopOf="@+id/confirmValueNextBtn"
+                app:layout_constraintTop_toBottomOf="@+id/nameNgoTv" />
+
+
+
+
+            <Button
+                android:id="@+id/confirmValueNextBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/horizontal_margin_medium_large"
+                android:text="@string/btn_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

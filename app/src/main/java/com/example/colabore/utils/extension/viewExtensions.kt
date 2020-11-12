@@ -6,7 +6,11 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import com.example.colabore.ui.widget.DefaultEditText
+import com.example.colabore.utils.Constants
+import com.example.colabore.utils.CurrencyMask
 import com.example.colabore.utils.CustomLinearLayoutManager
+import java.util.*
 
 fun View.setVisible(visible: Boolean, useInvisible: Boolean = false) {
     visibility = when {
@@ -18,6 +22,19 @@ fun View.setVisible(visible: Boolean, useInvisible: Boolean = false) {
 
 fun EditText.appendFilter(inputFilter: InputFilter) {
     filters += inputFilter
+}
+
+fun List<DefaultEditText>.validateFields(thenInvalidate: Boolean? = false): Boolean {
+    if (!Constants.VALIDATE_FIELDS) return true
+    else {
+        var isFormValid = true
+        this.forEach {
+            it.validate()
+            if (isFormValid) isFormValid = it.isFieldValid()
+            if (thenInvalidate == true) it.hideError()
+        }
+        return isFormValid
+    }
 }
 
 
@@ -44,6 +61,11 @@ fun androidx.recyclerview.widget.RecyclerView.setup(adapter: androidx.recyclervi
     this.layoutManager = layoutManager
     this.setHasFixedSize(hasFixedSize)
     decoration?.let { this.addItemDecoration(it) }
+}
+
+
+fun EditText.addCurrencyMask(displayCurrency: Boolean = false) {
+    addTextChangedListener(CurrencyMask.insert(Locale("pt", "BR"), this, displayCurrency))
 }
 
 fun EditText.onImeActionDone(onAction: () -> Unit) {

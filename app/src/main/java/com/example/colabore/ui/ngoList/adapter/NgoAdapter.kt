@@ -1,23 +1,24 @@
-package com.example.colabore.ui.main.adapter
-
+package com.example.colabore.ui.ngoList.adapter
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.BaseExpandableListAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
 import com.example.colabore.ui.base.SimpleBaseRecyclerViewAdapter
 import com.example.colabore.ui.description.DescriptionActivity
-import kotlinx.android.synthetic.main.item_card.view.*
+import kotlinx.android.synthetic.main.item_ngo_list.view.*
 
 
 var context = Activity()
 
-class MainCardAdapter(context: Context) : SimpleBaseRecyclerViewAdapter(context) {
+class NgoAdapter(context: Context) :  SimpleBaseRecyclerViewAdapter(context) {
 
     var list = listOf<CardModel>()
         set(value) {
@@ -37,7 +38,7 @@ class MainCardAdapter(context: Context) : SimpleBaseRecyclerViewAdapter(context)
     }
 
     override fun getItemViewHolder(parent: ViewGroup?): androidx.recyclerview.widget.RecyclerView.ViewHolder {
-        val itemView = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.item_ngo_list, parent, false)
         return ItemViewHolder(itemView)
     }
 
@@ -55,26 +56,18 @@ class MainCardAdapter(context: Context) : SimpleBaseRecyclerViewAdapter(context)
                     RequestOptions().error(R.drawable.ic_default_empty).placeholder(
                         R.drawable.ic_default_empty
                     )
-                ).into(homeImageIv)
-                ongTextTv.text = item.nome
+                ).into(ngoImageIvList)
+                titleNgo.text = item.nome
 
-                cardCv.setOnClickListener {
+                cardNgo.setOnClickListener {
                     val title = item.nome
                     val desc = item.info
                     val url =item.imageUrl
-                    val phone = item.telefone
-                    val address = item.endereco
-                    val lati = item.latitude.toString()
-                    val longi = item.longitude.toString()
 
                     val intent = Intent(context, DescriptionActivity::class.java)
                     intent.putExtra("nome", title)
                     intent.putExtra("info", desc)
                     intent.putExtra("url",url)
-                    intent.putExtra("phone",phone)
-                    intent.putExtra("address",address)
-                    intent.putExtra("lati",lati)
-                    intent.putExtra("longi",longi)
                     context.startActivity(intent)
                 }
 
