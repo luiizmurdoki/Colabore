@@ -37,6 +37,48 @@
         </activity>
 
         <activity
+            android:name="com.example.colabore.ui.profile.ProfileActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.history.HistoryActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.password.PasswordActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.finish.FinishActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.signUpNgo.SignUpNgoActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.picture.PictureActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.map.MapActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
             android:name="com.example.colabore.ui.description.DescriptionActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">

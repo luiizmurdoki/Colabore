@@ -1,6 +1,13 @@
 package com.example.colabore.ui.signUp
 
 import android.app.Activity
+import android.content.ContentValues
+import android.util.Log
+import com.example.colabore.model.OngObject
+import com.example.colabore.model.PersistUserInformation
+import com.example.colabore.utils.Constants
+import com.example.colabore.utils.extension.displayName
+import com.example.colabore.utils.extension.getFloatValue
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,23 +27,6 @@ class SignupPresenter : SignUpContract.Presenter {
         val currentUser: FirebaseUser? = auth.getCurrentUser()
         view = mvpView
     }
-
-   /* override fun getUser(cpf: String, password:String) {
-        view?.displayLoading(false)
-        auth.signInWithEmailAndPassword(cpf.unmask()+ Constants.RESQUEST, password)
-            .addOnCompleteListener(context) { }
-            .addOnSuccessListener(context) {
-                PersistUserInformation.cpf(cpf.unmask())
-                view?.displayLoading(true)
-                view?.openHome()
-            }
-            .addOnFailureListener(context) {
-                view?.displayLoading(true)
-                view?.displayError(null)
-            }
-    }
-*/
-
 
     override fun detachView() {
         view = null

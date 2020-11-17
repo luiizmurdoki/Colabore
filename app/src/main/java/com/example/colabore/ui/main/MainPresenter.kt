@@ -5,6 +5,7 @@ import android.content.ContentValues.TAG
 import android.graphics.ColorSpace
 import android.util.Log
 import com.example.colabore.model.CardModel
+import com.example.colabore.model.PersistUserInformation.name
 import com.example.colabore.model.UserObject
 import com.example.colabore.utils.extension.unmask
 import com.google.android.gms.common.api.Api
@@ -33,7 +34,8 @@ class MainPresenter : MainContract.Presenter {
             .addOnSuccessListener{
                 val document = it.data
                 val user = it.toObject<UserObject>(UserObject ::class.java)
-                view?.displayName(name = user?.nome)
+                view?.displayName(name = user?.nome , imageUrl = user?.imageUrl )
+                user?.nome?.let { it1 -> name(it1) }
                 saveUserModel(user)
                 Log.w(TAG, "$user")
             }
@@ -50,8 +52,10 @@ class MainPresenter : MainContract.Presenter {
             dataNascimento =user?.dataNascimento,
             email = user?.email ,
             face = user?.face ,
+            imageUrl = user?.imageUrl,
             telefone = user?.telefone ,
             senha = user?.senha
+
         )
 
     }

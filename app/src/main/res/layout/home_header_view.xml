@@ -46,13 +46,19 @@
 
     </LinearLayout>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/home_header_logo_width">
+
     <ImageView
         android:id="@+id/homeHeaderAvatarIv"
         android:layout_width="@dimen/home_header_avatar_size"
         android:layout_height="@dimen/home_header_avatar_size"
-        android:src="@drawable/ic_earth"
-        android:layout_marginEnd="@dimen/small_image"
         tools:src="@tools:sample/avatars" />
+
+    </androidx.cardview.widget.CardView>
 
 
 

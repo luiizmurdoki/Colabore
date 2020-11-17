@@ -10,8 +10,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
+import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.ui.base.SimpleBaseRecyclerViewAdapter
 import com.example.colabore.ui.description.DescriptionActivity
+import com.example.colabore.ui.picture.PictureActivity
+import com.example.colabore.utils.extension.unmask
 import kotlinx.android.synthetic.main.item_card.view.*
 
 
@@ -66,6 +69,7 @@ class MainCardAdapter(context: Context) : SimpleBaseRecyclerViewAdapter(context)
                     val address = item.endereco
                     val lati = item.latitude.toString()
                     val longi = item.longitude.toString()
+                    PersistUserInformation.idOng(item.idOng)
 
                     val intent = Intent(context, DescriptionActivity::class.java)
                     intent.putExtra("nome", title)
@@ -76,6 +80,7 @@ class MainCardAdapter(context: Context) : SimpleBaseRecyclerViewAdapter(context)
                     intent.putExtra("lati",lati)
                     intent.putExtra("longi",longi)
                     context.startActivity(intent)
+
                 }
 
             }

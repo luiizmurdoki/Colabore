@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
+import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.ui.base.SimpleBaseRecyclerViewAdapter
 import com.example.colabore.ui.description.DescriptionActivity
 import kotlinx.android.synthetic.main.item_ngo_list.view.*
@@ -63,11 +64,20 @@ class NgoAdapter(context: Context) :  SimpleBaseRecyclerViewAdapter(context) {
                     val title = item.nome
                     val desc = item.info
                     val url =item.imageUrl
+                    val phone = item.telefone
+                    val address = item.endereco
+                    val lati = item.latitude.toString()
+                    val longi = item.longitude.toString()
+                    PersistUserInformation.idOng(item.idOng)
 
                     val intent = Intent(context, DescriptionActivity::class.java)
                     intent.putExtra("nome", title)
                     intent.putExtra("info", desc)
                     intent.putExtra("url",url)
+                    intent.putExtra("phone",phone)
+                    intent.putExtra("address",address)
+                    intent.putExtra("lati",lati)
+                    intent.putExtra("longi",longi)
                     context.startActivity(intent)
                 }
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/horizontal_margin_medium_large">
+
+
+
+        <TextView
+            android:id="@+id/titleFinishTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Cadastro concluido com sucesso!"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/text_display"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/thanksImageIv"
+            android:layout_width="@dimen/minimal_height"
+            android:layout_height="@dimen/minimal_height"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginStart="@dimen/corner_small"
+            android:layout_marginEnd="@dimen/corner_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleFinishTv"
+            app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+            android:src= "@drawable/ic_finish_line"
+            />
+
+        <Button
+            android:id="@+id/loginBtn"
+            style="@style/ButtonGreenTextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/horizontal_margin_medium_large"
+            android:text="@string/btn_confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

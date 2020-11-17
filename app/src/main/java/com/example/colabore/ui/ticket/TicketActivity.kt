@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_ticket.*
 class TicketActivity :  BaseActivity(), TicketContract.View{
 
         private lateinit var auth: FirebaseAuth
+        private lateinit var value: String
 
         private val presenter: TicketContract.Presenter by lazy {
             TicketPresenter().apply { attachView(this@TicketActivity) }
@@ -31,15 +32,22 @@ class TicketActivity :  BaseActivity(), TicketContract.View{
             setContentView(R.layout.activity_ticket)
             auth = FirebaseAuth.getInstance()
             setListerners()
+            getExtras()
+            presenter.getDataOng(value)
             FirebaseApp.initializeApp(this)
 
+        }
+
+
+        private fun getExtras(){
+            value = intent.getStringExtra("valor")
         }
 
         private fun setListerners(){
             homeBtn.setOnClickListener {
                 val intent = Intent(this, MainActivity::class.java).apply{}
                 startActivity(intent)
-                finish()
+                finishAffinity()
             }
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

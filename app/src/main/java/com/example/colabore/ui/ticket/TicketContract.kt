@@ -9,5 +9,6 @@ interface TicketContract {
         }
 
         interface Presenter : BasePresenter<View> {
+            fun getDataOng(value: String)
         }
 }

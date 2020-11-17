@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/include3"
         layout="@layout/partial_toolbar" />
 
     <androidx.cardview.widget.CardView
@@ -14,10 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/horizontal_margin_xx_large"
-        app:cardCornerRadius="@dimen/corner_large"
+        app:cardCornerRadius="@dimen/home_header_logo_width"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2">
+        app:layout_constraintTop_toBottomOf="@+id/include3">
 
         <ImageView
             android:id="@+id/homeHeaderAvatarIv"
@@ -29,6 +29,16 @@
             tools:src="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/editPictureIv"
+        android:layout_width="@dimen/small_image_home"
+        android:layout_height="@dimen/small_image_home"
+        android:layout_marginTop="@dimen/small_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_edit_button"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
 
     <TextView
         android:id="@+id/profileNameTv"
@@ -39,17 +49,35 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginTop="@dimen/small_image_home"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/editPictureIv"
         tools:text="Gabriela Santiago" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/instructionsRv"
+
+    <Button
+        android:id="@+id/historicBtn"
+        style="@style/ButtonGreenTextWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_profile"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/horizontal_margin_x_large"
+        android:text="@string/btn_ngo"
+        app:layout_constraintTop_toBottomOf="@+id/profileNameTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/logOutBtn"
+        style="@style/ButtonRedTextWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/horizontal_margin_x_large"
+        android:text="@string/btn_logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileNameTv" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 

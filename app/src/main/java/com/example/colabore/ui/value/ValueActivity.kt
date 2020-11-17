@@ -25,6 +25,7 @@ class ValueActivity:  BaseActivity(), DescriptionContract.View {
     private lateinit var url: String
     private lateinit var title: String
     private lateinit var desc: String
+    private lateinit var value: String
     private lateinit var fields: List<DefaultEditText>
 
 
@@ -49,7 +50,7 @@ class ValueActivity:  BaseActivity(), DescriptionContract.View {
             onBackPressed()
         }
         transferValueNextBtn.setOnClickListener {
-            if (fields.validateFields()) if (transferValueEt.text.getFloatValue() > 20) {
+            if (fields.validateFields()) if (transferValueEt.text.getFloatValue() >= 20f) {
                 val value = transferValueEt.text
                 val intent = Intent(context, ConfirmValueActivity::class.java)
                 intent.putExtra("nome", title)
@@ -69,7 +70,6 @@ class ValueActivity:  BaseActivity(), DescriptionContract.View {
         url = intent.getStringExtra("url")
         title = intent.getStringExtra("nome")
         desc = intent.getStringExtra("info")
-        url = intent.getStringExtra("url")
     }
 
 

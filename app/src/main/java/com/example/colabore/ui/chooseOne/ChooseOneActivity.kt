@@ -9,6 +9,7 @@ import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.login.LoginActivity
 import com.example.colabore.ui.main.MainActivity
 import com.example.colabore.ui.signUp.SignUpActivity
+import com.example.colabore.ui.signUpNgo.SignUpNgoActivity
 import com.example.colabore.ui.splash.SplashActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -55,8 +56,8 @@ class ChooseOneActivity :  BaseActivity(), ChooseOneContract.View {
     }
 
     private fun openNgoSignUp(){
-        /*val intent2 = Intent(this, SignUpActivity::class.java)
-        startActivity(intent)*/
+        val intent = Intent(this, SignUpNgoActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onBackPressed() {

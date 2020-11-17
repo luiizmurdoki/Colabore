@@ -7,7 +7,7 @@ import com.example.colabore.ui.base.BaseView
 interface MainContract{
     interface View : BaseView<Presenter> {
         fun displayError(msg: String?)
-        fun displayName(name:String?)
+        fun displayName( name:String?, imageUrl:String?)
         fun  displayCards(items: List<CardModel>)
         fun displayLoading(close : Boolean)
     }

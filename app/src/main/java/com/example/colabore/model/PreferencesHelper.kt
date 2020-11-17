@@ -29,6 +29,11 @@ private const val PREF_URL_TERMS = "$SHARED_PREFERENCES_NAME.PREF_URL_TERMS"
 private const val PREF_URL_POLICY = "$SHARED_PREFERENCES_NAME.PREF_URL_POLICY"
 private const val PREF_ACCOUNT_ID = "$SHARED_PREFERENCES_NAME.PREF_ACCOUNT_ID"
 private const val PREF_USER_CPF = "$SHARED_PREFERENCES_NAME.PREF_USER_CPF"
+private const val PREF_ONG_ID = "$SHARED_PREFERENCES_NAME.PREF_ONG_ID"
+private const val PREF_ADRESS_ID = "$SHARED_PREFERENCES_NAME.PREF_ADRESS_ID"
+private const val PREF_CATEGORY_ID = "$SHARED_PREFERENCES_NAME.PREF_CATEGORY_ID"
+private const val PREF_INFO_ID = "$SHARED_PREFERENCES_NAME.PREF_INFO_ID"
+private const val PREF_URL_ID = "$SHARED_PREFERENCES_NAME.PREF_URL_ID"
 private const val PREF_USER_NAME = "$SHARED_PREFERENCES_NAME.PREF_USER_NAME"
 private const val PREF_USER_CNPJ = "$SHARED_PREFERENCES_NAME.PREF_USER_CNPJ"
 private const val PREF_USER_PASSWORD = "$SHARED_PREFERENCES_NAME.PREF_USER_PASSWORD"
@@ -110,6 +115,30 @@ object PreferencesHelper {
     var userCpf: String?
         get() = sharedPreferences.getString(PREF_USER_CPF, null)
         set(value) = sharedPreferences.edit().putString(PREF_USER_CPF, value).apply()
+
+    var idOng: String?
+        get() = sharedPreferences.getString(PREF_ONG_ID, null)
+        set(value) = sharedPreferences.edit().putString(PREF_ONG_ID, value).apply()
+
+    var cnpj: String?
+        get() = sharedPreferences.getString(PREF_USER_CNPJ, null)
+        set(value) = sharedPreferences.edit().putString(PREF_USER_CNPJ, value).apply()
+
+    var categoria: String?
+        get() = sharedPreferences.getString(PREF_CATEGORY_ID, null)
+        set(value) = sharedPreferences.edit().putString(PREF_CATEGORY_ID, value).apply()
+
+    var endereco: String?
+        get() = sharedPreferences.getString(PREF_ADRESS_ID, null)
+        set(value) = sharedPreferences.edit().putString(PREF_ADRESS_ID, value).apply()
+
+    var imageUrl: String?
+        get() = sharedPreferences.getString(PREF_URL_ID, null)
+        set(value) = sharedPreferences.edit().putString(PREF_URL_ID, value).apply()
+
+    var info: String?
+        get() = sharedPreferences.getString(PREF_INFO_ID, null)
+        set(value) = sharedPreferences.edit().putString(PREF_INFO_ID, value).apply()
 
     var userName: String?
         get() = sharedPreferences.getString(PREF_USER_NAME, null)

@@ -72,6 +72,8 @@ abstract class BaseActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 }
 
 fun Context.createAppSettingsIntent() = Intent().apply {

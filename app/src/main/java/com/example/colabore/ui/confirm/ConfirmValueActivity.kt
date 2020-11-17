@@ -48,6 +48,7 @@ class ConfirmValueActivity :  BaseActivity(), ConfirmValueContract.View{
         }
         confirmValueNextBtn.setOnClickListener {
             val intent = Intent(context, TicketActivity::class.java)
+            intent.putExtra("valor", value)
             context.startActivity(intent)
         }
     }
