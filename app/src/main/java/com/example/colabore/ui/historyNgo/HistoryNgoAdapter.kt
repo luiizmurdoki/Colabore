@@ -1,25 +1,17 @@
-package com.example.colabore.ui.history
+package com.example.colabore.ui.historyNgo
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.colabore.R
 import com.example.colabore.model.HistoryModel
-import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.ui.base.SimpleBaseRecyclerViewAdapter
-import com.example.colabore.ui.description.DescriptionActivity
 import com.example.colabore.utils.Constants.COMMON_DATE_FORMAT
 import com.example.colabore.utils.extension.fromHtml
-import com.example.colabore.utils.extension.getDay
 import kotlinx.android.synthetic.main.item_history.view.*
-import kotlinx.android.synthetic.main.item_ngo_list.view.*
 
-class HistoryAdapter(context: Context) :  SimpleBaseRecyclerViewAdapter(context) {
+class HistoryNgoAdapter(context: Context) :  SimpleBaseRecyclerViewAdapter(context) {
 
     var list = listOf<HistoryModel>()
         set(value) {
@@ -53,8 +45,8 @@ class HistoryAdapter(context: Context) :  SimpleBaseRecyclerViewAdapter(context)
     ) {
         fun bind(item: HistoryModel) {
             itemView.apply {
-                Ngo.text = context.getString(R.string.history_title , item.nomeOng).fromHtml()
-                Value.text = context.getString(R.string.history_value , item.valor.toString() , item.dataHora.format(COMMON_DATE_FORMAT)).fromHtml()
+                Ngo.text = context.getString(R.string.history_ngo_title , item.nome).fromHtml()
+                Value.text = context.getString(R.string.history_ngo_value , item.valor.toString() , item.dataHora.format(COMMON_DATE_FORMAT)).fromHtml()
 
             }
 

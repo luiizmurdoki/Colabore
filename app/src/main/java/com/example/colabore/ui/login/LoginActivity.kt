@@ -8,6 +8,8 @@ import com.example.colabore.ui.chooseOne.ChooseOneActivity
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.main.MainActivity
+import com.example.colabore.ui.mainNgo.MainNgoActivity
+import com.example.colabore.utils.extension.unmask
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -26,15 +28,9 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        setText()
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
         setListeners()
-    }
-
-    private fun setText(){
-        loginCpfEt.setText("25316577035")
-        loginPasswordEt.setText("Teste123")
     }
 
     override fun onStart() {
@@ -62,10 +58,17 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         }
     }
 
-    override fun openHome(){
-        val intent = Intent(this, MainActivity::class.java).apply{}
-        startActivity(intent)
-        finish()
+    override fun openHome(cpf: String){
+        if(cpf.unmask().length > 11){
+            val intent = Intent(this, MainNgoActivity::class.java).apply{}
+            startActivity(intent)
+            finish()
+        }
+        else{
+            val intent = Intent(this, MainActivity::class.java).apply{}
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun openChoose(){

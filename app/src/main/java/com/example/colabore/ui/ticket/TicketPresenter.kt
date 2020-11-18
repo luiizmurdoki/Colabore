@@ -11,6 +11,7 @@ import com.example.colabore.model.PersistUserInformation.name
 import com.example.colabore.ui.confirm.ConfirmValueContract
 import com.example.colabore.utils.Constants
 import com.example.colabore.utils.Constants.CDT_TICKET_RESALES_DATE_FORMAT
+import com.example.colabore.utils.Constants.COMMON_DATE_FORMAT
 import com.example.colabore.utils.Constants.ONG_DATE_FORMAT
 import com.example.colabore.utils.extension.displayName
 import com.example.colabore.utils.extension.getFloatValue
@@ -51,7 +52,7 @@ class  TicketPresenter : TicketContract.Presenter {
             "valor" to  value.getFloatValue(),
             "nomeOng" to ong.nome,
             "cnpj" to ong.cnpj,
-            "dataHora" to java.util.Calendar.getInstance().time.displayName(ONG_DATE_FORMAT)
+            "dataHora" to java.util.Calendar.getInstance().time.displayName(COMMON_DATE_FORMAT)
         )
 
 // Add a new document with a generated ID

@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTicketTv"
                 app:layout_constraintBottom_toTopOf="@+id/linkTicket"
-                android:src= "@drawable/ic_appreciation_bro"
+                android:src= "@drawable/ic_appreciation"
                 />
 
 

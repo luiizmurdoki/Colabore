@@ -1,4 +1,4 @@
-package com.example.colabore.ui.main
+package com.example.colabore.ui.mainNgo
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,85 +12,76 @@ import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.event.EventActivity
-import com.example.colabore.ui.eventUser.EventUserActivity
+import com.example.colabore.ui.historyNgo.HistoryNgoActivity
 import com.example.colabore.ui.login.LoginActivity
 import com.example.colabore.ui.main.adapter.MainCardAdapter
 import com.example.colabore.ui.map.MapActivity
 import com.example.colabore.ui.ngoList.NgoListActivity
 import com.example.colabore.ui.profile.ProfileActivity
+import com.example.colabore.utils.extension.setVisible
 import com.example.colabore.utils.extension.setup
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.donationCv
+import kotlinx.android.synthetic.main.activity_main.exploreCv
+import kotlinx.android.synthetic.main.activity_ngo_main.*
 import kotlinx.android.synthetic.main.home_header_view.*
-import kotlinx.android.synthetic.main.item_picture_grid.view.*
+import kotlinx.android.synthetic.main.home_header_view.cardView
 
-class MainActivity :  BaseActivity(), MainContract.View {
+class MainNgoActivity :  BaseActivity(), MainNgoContract.View {
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
 
 
-    private val presenter: MainContract.Presenter by lazy {
-        MainPresenter().apply { attachView(this@MainActivity) }
+    private val presenter: MainNgoContract.Presenter by lazy {
+        MainNgoPresenter().apply { attachView(this@MainNgoActivity) }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        presenter.getDataUser(cpf())
+        setContentView(R.layout.activity_ngo_main)
         setListerns()
-        presenter.loadBanners()
+        setDisplay()
+        presenter.loadData(cpf())
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
     }
 
-
-    private val cardAdapter by lazy {
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = MainCardAdapter(this)
-        bannersRv.setup(adapter, layoutManager)
-        bannersRv.isNestedScrollingEnabled = false
-        adapter
+    private fun setDisplay(){
+        cardView.setVisible(false)
+        saudation.text = getText(R.string.home_header_saudation)
     }
 
     private fun setListerns(){
-        donationCv.setOnClickListener {
-            val intent = Intent(this, NgoListActivity::class.java).apply{}
+        eventCv.setOnClickListener {
+            val intent = Intent(this, EventActivity::class.java).apply{}
             startActivity(intent)
         }
-        homeHeaderAvatarIv.setOnClickListener{
-            val intent = Intent(this, ProfileActivity::class.java).apply{}
-            startActivity(intent)
-            finish()
-        }
-        exploreCv.setOnClickListener{
-            val intent = Intent(this, MapActivity::class.java).apply{}
+        donationHistoryCv.setOnClickListener{
+            val intent = Intent(this, HistoryNgoActivity::class.java).apply{}
             startActivity(intent)
         }
-        eventHomeCv.setOnClickListener{
-            val intent = Intent(this, EventUserActivity::class.java).apply{}
+        logOutBtn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java).apply{}
             startActivity(intent)
+            finishAffinity()
         }
-
 
     }
 
-    override fun displayName(name:String?, imageUrl:String?){
+    override fun displayData(image: String , name: String) {
         homeHeaderNameTv.text = name
-        Glide.with(this).load(imageUrl).apply(
+        Glide.with(this).load(image).apply(
             RequestOptions().error(R.drawable.ic_face_nothing).placeholder(
                 R.drawable.ic_face_nothing
             )
-        ).into(homeHeaderAvatarIv)
-    }
-
-    override fun displayCards(items: List<CardModel>) {
-        cardAdapter.list = items
+        ).into(homeNgoAvatarIv)
     }
 
     override  fun displayLoading(close : Boolean){
         if(close) progressDialog.dialog.dismiss()
-        else progressDialog.show(this,"Perai Carai...")
+        else progressDialog.show(this)
     }
 
     override fun displayError(msg: String?){

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/toolbarUserEvent"
+        layout="@layout/partial_toolbar"/>
+
+    <TextView
+        android:id="@+id/titleUserEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eventos"
+        android:gravity="center"
+        android:layout_margin="@dimen/small_image_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bannersRv"
+        android:layout_gravity="center"
+        android:textColor="@color/colorGreen"
+        android:textStyle="bold"
+        android:textSize="@dimen/small_image_home" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bannersUserRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/titleUserEvent"
+        android:layout_marginTop="@dimen/vertical_margin_large"
+        android:layout_marginBottom="@dimen/vertical_margin_large"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/small_margin"
+        tools:listitem="@layout/item_event"
+        tools:orientation="vertical"
+        tools:scrollbars="vertical" />
+
+</LinearLayout>

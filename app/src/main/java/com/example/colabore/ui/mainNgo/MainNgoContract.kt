@@ -1,18 +1,17 @@
-package com.example.colabore.ui.login
+package com.example.colabore.ui.mainNgo
 
+import com.example.colabore.model.CardModel
 import com.example.colabore.ui.base.BasePresenter
 import com.example.colabore.ui.base.BaseView
-import com.example.colabore.utils.validations.IsCpf
 
-
-interface LoginContract {
+interface MainNgoContract {
     interface View : BaseView<Presenter> {
         fun displayError(msg: String?)
-        fun openHome(cpf: String)
+        fun displayData(image: String , name: String)
         fun displayLoading(close : Boolean)
     }
 
     interface Presenter : BasePresenter<View> {
-        fun getUser(cpf: String, password:String)
+        fun loadData(cpf: String)
     }
 }

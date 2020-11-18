@@ -51,7 +51,7 @@ class LoginPresenter : LoginContract.Presenter {
                 .addOnSuccessListener(context) {
                     PersistUserInformation.cpf(cpf.unmask())
                     view?.displayLoading(true)
-                    view?.openHome()
+                    view?.openHome(cpf.unmask())
                 }
                 .addOnFailureListener(context) {
                     view?.displayLoading(true)

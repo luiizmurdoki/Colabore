@@ -49,7 +49,31 @@
         </activity>
 
         <activity
+            android:name="com.example.colabore.ui.event.EventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.eventUser.EventUserActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.descriptionEvent.DescrptionEventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
             android:name="com.example.colabore.ui.password.PasswordActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.historyNgo.HistoryNgoActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>
@@ -61,7 +85,19 @@
         </activity>
 
         <activity
+            android:name="com.example.colabore.ui.event.EventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
             android:name="com.example.colabore.ui.signUpNgo.SignUpNgoActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.mainNgo.MainNgoActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>

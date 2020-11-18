@@ -3,6 +3,7 @@
 
     <!--LOGIN-->
     <string name="welcome_login">Bem vindo ao Colabore!</string>
+    <string name="sucess_event">Evento criado com suecesso</string>
     <string name="forgot_password">Esqueci minha senha</string>
     <string name="fields_error">Certifique-se de que todos os campos estão preenchidos!</string>
     <string name="login_error">Usuário não encontrado!</string>
@@ -16,6 +17,7 @@
     <string name="btn_home">Voltar ao inicio</string>
     <string name="btn_ngo">Historico de doações</string>
     <string name="btn_logout">Sair</string>
+    <string name="btn_send">Criar evento</string>
 
     <!--HINT-->
     <string name="hint_cpf">CPF</string>
@@ -25,12 +27,17 @@
 
     <!--HOME-->
     <string name="home_header_hello">Olá,</string>
+    <string name="home_header_saudation">Seja bem vindo,</string>
     <string name="home_donation">Doação</string>
+    <string name="home_schedule">Eventos</string>
     <string name="home_discovery">Descubra</string>
+    <string name="home_history_donation">Doações recebidas</string>
 
 
     <!--SINGUP-->
     <string name="singup_hint_name">Nome</string>
+    <string name="singup_hint_event">Título do evento</string>
+    <string name="singup_hint_drescription_event">Discrição do evento</string>
     <string name="singup_hint_name_fantasy">Nome Fantasia</string>
     <string name="singup_hint_email">E-mail</string>
     <string name="singup_hint_category">Categoria</string>
@@ -61,7 +68,12 @@
 
     <!--HISTORY-->
     <string name="history_title"><![CDATA[Você doou para a ONG: <b>%s</b>]]></string>
+    <string name="history_ngo_title"><![CDATA[Você recebeu a doação de: <b>%s</b>]]></string>
     <string name="history_value"><![CDATA[Você realizou a doação no valor de <b>%s</b> <br/>no dia <b>%s</b>]]></string>
+    <string name="history_ngo_value"><![CDATA[Sua ong recebeu a doação no valor de <b>%s</b> <br/>no dia <b>%s</b>]]></string>
+    <string name="event_ngo"><![CDATA[%s \n\n %s ]]></string>
+
+
 
     <!--MENU-->
     <string name="faq_title">FAQ</string>
@@ -74,6 +86,7 @@
     <string name="placeholder_empty_label">Não existem resultados.</string>
     <string name="placeholder_empty_title">Erro!</string>
     <string name="placeholder_error_title">Ops!</string>
+    <string name="placeholder_sucess">Sucesso!</string>
 
 
     <!--ACTIONS-->
@@ -92,6 +105,10 @@
     <string name="action_continue">Continuar</string>
     <string name="action_start">Início</string>
     <string name="action_send">Enviar</string>
+
+
+    <!--SINGUP-->
+    <string name="title_event">Crie seu evento!</string>
 
 
     <!--AppTextInputLayout DEFAULT FEEDBACKS-->

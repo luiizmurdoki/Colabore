@@ -1,18 +1,18 @@
-package com.example.colabore.ui.login
+package com.example.colabore.ui.eventUser
 
+import com.example.colabore.model.CardModel
+import com.example.colabore.model.EventModel
 import com.example.colabore.ui.base.BasePresenter
 import com.example.colabore.ui.base.BaseView
-import com.example.colabore.utils.validations.IsCpf
 
-
-interface LoginContract {
+interface EventUserContract {
     interface View : BaseView<Presenter> {
         fun displayError(msg: String?)
-        fun openHome(cpf: String)
+        fun  displayCards(items: List<EventModel>)
         fun displayLoading(close : Boolean)
     }
 
     interface Presenter : BasePresenter<View> {
-        fun getUser(cpf: String, password:String)
+        fun loadBanners()
     }
 }
