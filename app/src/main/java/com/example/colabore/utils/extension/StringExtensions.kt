@@ -16,14 +16,6 @@ import java.text.NumberFormat
 import java.util.*
 
 
-/**
- * Created by azul on 11/10/17.
- */
-/**
- * Returns string of float value to percentage
- * @param maximumFractionDigits length of fraction digits
- * @return percentage value of @value
- */
 fun Float.toPercentage(maximumFractionDigits: Int? = null, minimumFractionDigits: Int? = null): String {
     val number = NumberFormat.getPercentInstance()
     maximumFractionDigits?.let { number.maximumFractionDigits = it }

@@ -7,9 +7,6 @@ import java.util.*
 
 
 
-/**
- * Created by joaopaulo on 19/10/17.
- */
 private const val SECOND_MILLIS = 1000f
 private const val MINUTE_MILLIS = 60 * SECOND_MILLIS
 private const val HOUR_MILLIS = 60 * MINUTE_MILLIS

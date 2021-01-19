@@ -3,9 +3,6 @@ package com.example.colabore.utils.validations;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-/**
- * Created by azul on 07/11/17.
- */
 
 public class IsDate {
     public static boolean isValid(String text, String dateFormat) {

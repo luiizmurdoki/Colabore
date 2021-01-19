@@ -4,9 +4,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-/**
- * Created by mobile2you on 19/07/16.
- */
 public class TextMask {
     public static final String CEP_MASK = "#####-###";
     public static final String CPF_MASK = "###.###.###-##";

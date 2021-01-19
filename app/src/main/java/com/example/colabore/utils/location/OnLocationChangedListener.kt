@@ -3,11 +3,6 @@ package com.example.colabore.utils.location
 import android.content.Context
 import android.location.Location
 
-/**
- * Created by Leo Almeida on 2019-08-19.
- *
- * The Activity asking for location updates needs to implement this interface
- */
 interface OnLocationChangedListener {
 
     /**

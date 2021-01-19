@@ -1,8 +1,5 @@
 package com.example.colabore.utils.validations;
 
-/**
- * Created by mobile2you on 12/08/16.
- */
 public class IsLengthValid {
 
     public static boolean isValid(String text, int size, boolean exactSameSize) {

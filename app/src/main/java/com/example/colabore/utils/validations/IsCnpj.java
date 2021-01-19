@@ -1,8 +1,5 @@
 package com.example.colabore.utils.validations;
 
-/**
- * Created by azul on 11/04/17.
- */
 
 public class IsCnpj {
     private static final int[] weightCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};

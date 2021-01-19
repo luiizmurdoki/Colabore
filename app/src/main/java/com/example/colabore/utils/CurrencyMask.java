@@ -7,9 +7,6 @@ import android.widget.EditText;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/**
- * Created by mobile2you on 06/07/16.
- */
 public class CurrencyMask {
 
     public static String unmask(String s) {

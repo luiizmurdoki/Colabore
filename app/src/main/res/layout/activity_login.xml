@@ -55,14 +55,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
                 app:etEmptinessIsValid="false"
-                app:etInputTextType="name"
+                app:etInputTextType="password"
+                app:textColor="@color/colorblack"
+                app:toggleColor="@color/colorGreen"
                 app:hint="@string/hint_password"
                 text = "Teste123"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginCpfEt"
-                app:textColor="@color/colorblack"
-                app:toggleColor="@color/colorGreen"
                 tools:visibility="visible" />
 
             <TextView

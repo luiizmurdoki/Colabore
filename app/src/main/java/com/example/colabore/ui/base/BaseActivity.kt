@@ -13,16 +13,11 @@ import com.example.colabore.model.PreferencesHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 
-class BaseActivityconst val PERMISSION_REQUEST = 190
 
 // ...
 // Initialize Firebase Auth
 
 abstract class BaseActivity : AppCompatActivity() {
-
-
-
-    private lateinit var actionToExecute: (() -> Unit)
 
     val context: Context
         get() = this
@@ -54,8 +49,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     //ACTION BAR METHODS
     fun setToolbar(title: String) {
-        /*val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)*/
         setTitle(title)
     }
 

@@ -22,9 +22,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 
-/**
- * Created by mobile2you on 13/09/16.
- */
 public class AppTextInputLayout extends TextInputLayout {
     private final int TYPE_CUSTOM = 0;
     private final int TYPE_NAME = 1;
