@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbarSingup"
+        layout="@layout/partial_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_image_home"
+            android:layout_marginTop="@dimen/small_image_home"
+            android:text="@string/singup_title_ngo"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"/>
+
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/NameNgoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="name"
+            app:hint="@string/singup_hint_name"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/CnpjEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="cnpj"
+            app:hint="@string/hint_cnpj"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/PhoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="phone"
+            app:hint="@string/singup_hint_phone"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/addressNgoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="custom"
+            app:hint="@string/singup_hint_adress"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/categoryEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="custom"
+            app:hint="@string/singup_hint_category"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/imgUrlEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="custom"
+            app:hint="@string/singup_hint_img_url"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+
+        <com.example.colabore.ui.widget.DefaultEditText
+            android:id="@+id/infoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_large"
+            android:layout_marginEnd="@dimen/vertical_margin_large"
+            android:layout_marginStart="@dimen/vertical_margin_large"
+            android:textColor="@color/colorblack"
+            app:etEmptinessIsValid="false"
+            app:etInputTextType="custom"
+            app:hint="@string/singup_hint_info"
+            app:textColor="@color/colorblack"
+            app:toggleColor="@color/colorblack" />
+
+        <!--Existe somente para deixar o botão no fundo do layout-->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_image"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/loginSigninBtn"
+            style="@style/ButtonGreenTextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_image"
+            android:text="@string/btn_continue" />
+
+    </LinearLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

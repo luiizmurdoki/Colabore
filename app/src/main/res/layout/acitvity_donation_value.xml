@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/partial_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/horizontal_margin_medium_large">
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/payment_title"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_display"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/transferValueEt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.093" />
+
+            <ImageView
+                android:id="@+id/valueImageIv"
+                android:layout_width="@dimen/minimal_height"
+                android:layout_height="@dimen/minimal_height"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginStart="@dimen/corner_small"
+                android:layout_marginBottom="@dimen/vertical_margin_large"
+                android:layout_marginEnd="@dimen/corner_small"
+                app:layout_constraintBottom_toTopOf="@+id/transferValueNextBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src= "@drawable/ic_make_it_rain" />
+
+            <com.example.colabore.ui.widget.DefaultEditText
+                android:id="@+id/transferValueEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_large"
+                android:layout_marginBottom="@dimen/vertical_margin_large"
+                app:textColor="@color/colorblack"
+                app:etEmptinessIsValid="false"
+                android:textAlignment="center"
+                app:etInputTextType="number"
+                app:etMaxLength="17"
+                app:etAllCaps="true"
+                app:hintColor="@color/colorblack"
+                app:hint="@string/payment_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTv"
+                app:layout_constraintBottom_toTopOf="@+id/valueImageIv" />
+
+            <Button
+                android:id="@+id/transferValueNextBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/horizontal_margin_medium_large"
+                android:text="@string/btn_continue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

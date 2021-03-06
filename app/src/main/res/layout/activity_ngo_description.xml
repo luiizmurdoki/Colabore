@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/partial_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/logo_height"
+        app:layout_constraintBottom_toTopOf="@+id/ngoName"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <TextView
+        android:id="@+id/ngoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorGreen"
+        android:textSize="@dimen/text_headline"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/small_image"
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Gabriela Santiago" />
+
+    <TextView
+        android:id="@+id/ngoAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlackCustom"
+        android:textSize="@dimen/text_body"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_address"
+        android:layout_margin="@dimen/small_image"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/small_image"
+        android:layout_marginBottom="@dimen/small_image_home"
+        app:layout_constraintTop_toBottomOf="@+id/ngoName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Gabriela Santiago" />
+
+    <TextView
+        android:id="@+id/ngoPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlackCustom"
+        android:textSize="@dimen/text_body"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_telephone"
+        android:layout_margin="@dimen/small_image"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/small_image"
+        android:layout_marginBottom="@dimen/small_image_home"
+        app:layout_constraintTop_toBottomOf="@+id/ngoAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Gabriela Santiago" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorSpace"
+        android:layout_marginTop="@dimen/small_image"
+        app:layout_constraintTop_toBottomOf="@+id/ngoPhone"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollSv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_margin="@dimen/small_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ngoBtn"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <TextView
+            android:id="@+id/drescripitionTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/text_subtitle"
+            tools:listitem="@layout/item_profile" />
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/ngoBtn"
+        style="@style/ButtonGreenTextWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_marginStart="@dimen/vertical_margin"
+        android:layout_marginEnd="@dimen/vertical_margin"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:text="@string/btn_donor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

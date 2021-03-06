@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    tools:context=".main.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <include
         android:id="@+id/include"
@@ -35,13 +35,12 @@
         android:id="@+id/donationCv"
         android:layout_width="@dimen/card_height"
         android:layout_height="@dimen/card_height"
-        android:layout_margin="@dimen/small_image"
+        android:layout_marginBottom="@dimen/small_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/exploreCv"
         app:layout_constraintStart_toStartOf="parent"
         app:cardBackgroundColor="@color/colorGreen"
-        app:cardCornerRadius="@dimen/button_deafult"
-        app:layout_constraintTop_toBottomOf="@id/bannersRv">
+        app:cardCornerRadius="@dimen/button_deafult">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -53,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Doações"
+            android:text="@string/home_donation"
             android:textColor="@color/colorWhite"
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="@dimen/small_image"
@@ -63,28 +62,60 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/exploreCv"
         android:layout_width="@dimen/card_height"
         android:layout_height="@dimen/card_height"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/donationCv"
+        android:layout_marginBottom="@dimen/small_image"
         app:cardBackgroundColor="@color/colorGreen"
         app:cardCornerRadius="@dimen/button_deafult"
-        app:layout_constraintTop_toBottomOf="@id/bannersRv">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/donationCv">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_search"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="@dimen/small_image"
+            android:src="@drawable/ic_search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="@dimen/small_image"
+            android:text="@string/home_discovery"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_subtitle"
+            android:textStyle="bold" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/eventHomeCv"
+        android:layout_width="@dimen/card_height"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginBottom="@dimen/small_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/colorGreen"
+        app:layout_constraintTop_toBottomOf="@+id/bannersRv"
+        app:cardCornerRadius="@dimen/button_deafult">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_schedule"
             android:layout_gravity="center|top"
             android:layout_marginTop="@dimen/small_image"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descubra"
+            android:text="@string/home_schedule"
             android:textColor="@color/colorWhite"
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="@dimen/small_image"

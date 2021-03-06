@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardNgo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/small_image">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Ngo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/small_image"
+        android:layout_marginTop="@dimen/small_image"
+        android:textSize="@dimen/small_image"
+        android:layout_marginStart="@dimen/small_image"
+        android:layout_marginEnd="@dimen/small_image"
+        android:textColor="@color/colorblack"
+        tools:text="@string/history_title"/>
+
+    <TextView
+        android:id="@+id/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/small_image"
+        android:textSize="@dimen/small_image"
+        android:layout_marginTop="@dimen/small_image"
+        android:layout_marginStart="@dimen/small_image"
+        android:layout_marginEnd="@dimen/small_image"
+        android:textColor="@color/colorblack"
+        tools:text="@string/history_value"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorblack"
+        android:layout_gravity="bottom"
+        />
+</androidx.cardview.widget.CardView>
+
+

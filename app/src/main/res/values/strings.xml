@@ -3,32 +3,124 @@
 
     <!--LOGIN-->
     <string name="welcome_login">Bem vindo ao Colabore!</string>
+    <string name="sucess_event">Evento criado com suecesso</string>
     <string name="forgot_password">Esqueci minha senha</string>
+    <string name="fields_error">Certifique-se de que todos os campos estão preenchidos!</string>
+    <string name="login_error">Usuário não encontrado!</string>
 
     <!--BUTTONS-->
     <string name="btn_continue">Continuar</string>
+    <string name="btn_enter">Entrar</string>
     <string name="btn_sign_in">Cadastre-se</string>
+    <string name="btn_donor">Doar</string>
+    <string name="btn_confirm">Confirmar</string>
+    <string name="btn_home">Voltar ao inicio</string>
+    <string name="btn_ngo">Historico de doações</string>
+    <string name="btn_logout">Sair</string>
+    <string name="btn_send">Criar evento</string>
 
     <!--HINT-->
     <string name="hint_cpf">CPF</string>
+    <string name="hint_cpf_cnpj">CPF/CNPJ</string>
     <string name="hint_password">Senha</string>
+    <string name="hint_cnpj">CNPJ</string>
 
     <!--HOME-->
     <string name="home_header_hello">Olá,</string>
+    <string name="home_header_saudation">Seja bem vindo,</string>
+    <string name="home_donation">Doação</string>
+    <string name="home_schedule">Eventos</string>
+    <string name="home_discovery">Descubra</string>
+    <string name="home_history_donation">Doações recebidas</string>
 
 
     <!--SINGUP-->
     <string name="singup_hint_name">Nome</string>
+    <string name="singup_hint_event">Título do evento</string>
+    <string name="singup_hint_drescription_event">Discrição do evento</string>
+    <string name="singup_hint_name_fantasy">Nome Fantasia</string>
     <string name="singup_hint_email">E-mail</string>
+    <string name="singup_hint_category">Categoria</string>
+    <string name="singup_hint_info">Informações sobre a ONG</string>
+    <string name="singup_hint_img_url">URL de imagem da ONG</string>
     <string name="singup_hint_password">Senha</string>
+    <string name="singup_hint_password_again">Confirmar Senha</string>
     <string name="singup_hint_birthday">Data de Nascimento</string>
+    <string name="singup_hint_create_ngo">Data de Registro</string>
     <string name="singup_hint_phone">Telefone</string>
-    <string name="singup_hint_street">Rua</string>
+    <string name="singup_hint_adress">Endereço</string>
     <string name="singup_hint_CEP">CEP</string>
     <string name="singup_hint_neighbohood">Bairro</string>
     <string name="singup_hint_number">Numero</string>
     <string name="singup_hint_obs">Complemento</string>
     <string name="singup_title">Informações Pessoais</string>
+    <string name="singup_title_ngo">Informações sobre a ONG</string>
+    <string name="singup_choose_one">Olá,\n escolha como sera cadastrado</string>
+    <string name="singup_donor">Doador</string>
+    <string name="singup_ngo">ONG</string>
+    <string name="singup_password_title">Crie a sua senha para usar\n no App</string>
+    <string name="sigin_up_password_rules_title">Regras da Senha</string>
+
+
+    <!--PAYMENT-->
+    <string name="payment_title">Valor da Doação</string>
+    <string name="payment_value">Você esta doando </string>
+
+    <!--HISTORY-->
+    <string name="history_title"><![CDATA[Você doou para a ONG: <b>%s</b>]]></string>
+    <string name="history_ngo_title"><![CDATA[Você recebeu a doação de: <b>%s</b>]]></string>
+    <string name="history_value"><![CDATA[Você realizou a doação no valor de <b>%s</b> <br/>no dia <b>%s</b>]]></string>
+    <string name="history_ngo_value"><![CDATA[Sua ong recebeu a doação no valor de <b>%s</b> <br/>no dia <b>%s</b>]]></string>
+    <string name="event_ngo"><![CDATA[%s \n\n %s ]]></string>
+
+
+
+    <!--MENU-->
+    <string name="faq_title">FAQ</string>
+    <string name="open_settings_error">Não foi possível abrir as configurações do aplicativo. Acesse através do menu.</string>
+
+
+    <!--SNACKBAR-->
+    <string name="placeholder_error_label">Houve um erro inesperado.</string>
+    <string name="placeholder_error_button_label">Tentar novamente</string>
+    <string name="placeholder_empty_label">Não existem resultados.</string>
+    <string name="placeholder_empty_title">Erro!</string>
+    <string name="placeholder_error_title">Ops!</string>
+    <string name="placeholder_sucess">Sucesso!</string>
+
+
+    <!--ACTIONS-->
+    <string name="yes">Sim</string>
+    <string name="cancel">Cancelar</string>
+    <string name="action_share">Compartilhar</string>
+    <string name="action_copy_code">Copiar código</string>
+    <string name="action_ok">OK</string>
+    <string name="action_apply">Aplicar</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_activate">Ativar</string>
+    <string name="action_enable">Habilitar</string>
+    <string name="action_disable">Desabilitar</string>
+    <string name="action_conclude">Concluir</string>
+    <string name="action_continue">Continuar</string>
+    <string name="action_start">Início</string>
+    <string name="action_send">Enviar</string>
+
+
+    <!--SINGUP-->
+    <string name="title_event">Crie seu evento!</string>
+
+
+    <!--AppTextInputLayout DEFAULT FEEDBACKS-->
+    <string name="network_error_unknown">Erro desconhecido, não foi possível completar sua requisição.</string>
+    <string name="network_error_session">Sua sessão expirou\nEntre novamente</string>
+    <string name="apptextinputlayout_invalid_field">%s inválido.</string>
+    <string name="apptextinputlayout_empty_field">%s inválido.</string>
+    <string name="apptextinputlayout_regex_field">%s não atende aos critérios exigidos.</string>
+    <string name="apptextinputlaoyut_password_field">%1$s não pode conter menos de %2$d caracteres.</string>
+
+
+
 
 
 

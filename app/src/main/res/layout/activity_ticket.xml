@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/horizontal_margin_medium_large">
+
+
+
+            <TextView
+                android:id="@+id/titleTicketTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Obrigado pela doação ;)"
+                android:layout_marginTop="@dimen/vertical_margin_large"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_display"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/thanksImageIv"
+                android:layout_width="@dimen/minimal_height"
+                android:layout_height="@dimen/minimal_height"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginStart="@dimen/corner_small"
+                android:layout_marginEnd="@dimen/corner_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTicketTv"
+                app:layout_constraintBottom_toTopOf="@+id/linkTicket"
+                android:src= "@drawable/ic_appreciation"
+                />
+
+
+            <TextView
+                android:id="@+id/linkTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_large"
+                android:layout_marginBottom="@dimen/vertical_margin_large"
+                android:gravity="center"
+                android:text="Este é seu codigo:"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/text_display"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/codeTicket"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/codeTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/vertical_margin_large"
+                android:gravity="center"
+                android:text="0215875451515514 58115151 5615156151"
+                android:textColor="@color/colorLink"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/homeBtn"/>
+
+            <Button
+                android:id="@+id/homeBtn"
+                style="@style/ButtonGreenTextWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/horizontal_margin_medium_large"
+                android:text="@string/btn_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

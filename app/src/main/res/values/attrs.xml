@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="AppTextInputLayout">
+		<attr name="validation" format="boolean" />
+		<attr name="emptinessIsValid" format="boolean" />
+		<attr name="emptyErrorText" format="string" />
+		<attr name="invalidErrorText" format="string" />
+		<attr name="pattern" format="string" />
+		<attr name="inputTextType" format="enum">
+			<enum name="custom" value="0" />
+			<enum name="name" value="1" />
+			<enum name="mail" value="2" />
+			<enum name="date" value="3" />
+			<enum name="phone" value="4" />
+			<enum name="cep" value="5" />
+			<enum name="creditCard" value="6" />
+			<enum name="password" value="7" />
+			<enum name="matching" value="8" />
+			<enum name="cpf" value="9" />
+			<enum name="cnpj" value="10" />
+			<enum name="creditCardDate" value="11" />
+			<enum name="number" value="12" />
+			<enum name="cellphone" value="13" />
+			<enum name="numberPassword" value="14" />
+			<enum name="fullPhone" value="15" />
+			<enum name="cpfOrCnpj" value="16" />
+		</attr>
+		<attr name="minLength" format="integer" />
+		<attr name="customMask" format="string" />
+		<attr name="errorBackground" format="reference" />
+		<attr name="defaultBackground" format="reference" />
+		<attr name="verifyCpfWithSavedOne" format="boolean" />
+	</declare-styleable>
+
+	<!--PROGRESS BUTTON-->
+	<declare-styleable name="ProgressButton">
+		<attr name="btnBackground" format="reference" />
+		<attr name="btnText" format="reference" />
+		<attr name="btnCustomSelectableItemBackground" format="reference" />
+		<attr name="btnTextSize" format="dimension" />
+		<attr name="btnTextColor" format="color" />
+		<attr name="btnProgressColor" format="color" />
+		<attr name="btnAllCaps" format="boolean" />
+		<attr name="btnEnabled" format="boolean" />
+		<attr name="btnIcon" format="reference" />
+		<attr name="btnBackgroundColor" format="color" />
+		<attr name="btnDisabledBackgroundColor" format="color" />
+	</declare-styleable>
+
+	<!--COMPAT VIEWS WITH VECTOR DRAWABLES-->
+	<declare-styleable name="CompatDrawableEditText">
+		<attr name="drawableLeftCompat" />
+		<attr name="drawableRightCompat" />
+		<attr name="drawableTopCompat" />
+		<attr name="drawableBottomCompat" />
+	</declare-styleable>
+
+	<declare-styleable name="CompatDrawableTextView">
+		<attr name="drawableLeftCompat" />
+		<attr name="drawableRightCompat" />
+		<attr name="drawableTopCompat" />
+		<attr name="drawableBottomCompat" />
+	</declare-styleable>
+	<attr name="drawableLeftCompat" format="reference" />
+	<attr name="drawableRightCompat" format="reference" />
+	<attr name="drawableTopCompat" format="reference" />
+	<attr name="drawableBottomCompat" format="reference" />
+
+	<!--DEFAULT EDIT TEXT-->
+	<declare-styleable name="DefaultEditText">
+		<attr name="hint" format="reference" />
+		<attr name="etInputTextType" format="enum">
+			<enum name="custom" value="0" />
+			<enum name="name" value="1" />
+			<enum name="mail" value="2" />
+			<enum name="date" value="3" />
+			<enum name="phone" value="4" />
+			<enum name="cep" value="5" />
+			<enum name="creditCard" value="6" />
+			<enum name="password" value="7" />
+			<enum name="matching" value="8" />
+			<enum name="cpf" value="9" />
+			<enum name="cnpj" value="10" />
+			<enum name="creditCardDate" value="11" />
+			<enum name="number" value="12" />
+			<enum name="cellphone" value="13" />
+			<enum name="numberPassword" value="14" />
+			<enum name="fullPhone" value="15" />
+			<enum name="cpfOrCnpj" value="16" />
+			<enum name="cnae" value="17" />
+			<enum name="rg" value="18" />
+		</attr>
+		<attr name="etMinLength" format="integer" />
+		<attr name="etMaxLength" format="integer" />
+		<attr name="etMaxLines" format="integer" />
+		<attr name="etSingleLines" format="boolean" />
+		<attr name="etAllCaps" format="boolean" />
+		<attr name="etBlockSpace" format="boolean" />
+		<attr name="etCustomMask" format="string" />
+		<attr name="etMatchesRegex" format="string" />
+		<attr name="etNotMatchesRegex" format="string" />
+		<attr name="etUseDefaultErrorForRegex" format="string" />
+		<attr name="etEmptinessIsValid" format="boolean" />
+		<attr name="etNeedsValidation" format="boolean" />
+		<attr name="etEmptyErrorText" format="string" />
+		<attr name="etInvalidErrorText" format="string" />
+		<attr name="etPattern" format="string" />
+		<attr name="editable" format="boolean" />
+		<attr name="etEnabled" format="boolean" />
+		<attr name="drawableRight" format="reference" />
+		<attr name="drawableLeft" format="reference" />
+		<attr name="textColor" format="reference" />
+		<attr name="hintColor" format="reference" />
+		<attr name="toggleColor" format="reference" />
+		<attr name="etVerifyCpfWithSavedOne" format="boolean" />
+	</declare-styleable>
+
+	<!--DEFAULT BUTTON-->
+	<declare-styleable name="DefaultButton">
+		<attr name="dbtnText" format="string" />
+		<attr name="dbtnEnabled" format="boolean" />
+		<attr name="dbtnTextColor" format="color" />
+	</declare-styleable>
+
+	<!--DEFAULT SEARCH VIEW-->
+	<declare-styleable name="DefaultSearchView">
+		<attr name="searchViewHint" format="string" />
+		<attr name="searchViewMaxLength" format="integer" />
+		<attr name="searchViewRegexInputFilter" format="string" />
+	</declare-styleable>
+
+	<!--SINGLE EDIT TEXT-->
+	<declare-styleable name="SingleTextEditText">
+		<attr name="SgInputTextType" format="enum">
+			<enum name="custom" value="0" />
+			<enum name="number" value="2" />
+		</attr>
+		<attr name="singleLength" format="integer" />
+	</declare-styleable>
+
+	<!--DEFAULT SELECTOR-->
+	<declare-styleable name="DefaultSelector">
+		<attr name="dsLabel" format="string" />
+		<attr name="dsContent" format="string" />
+		<attr name="dsContentCenterAlignment" format="boolean" />
+	</declare-styleable>
+
+
+</resources>

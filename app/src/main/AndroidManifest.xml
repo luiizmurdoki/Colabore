@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.colabore">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,25 +19,152 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".splash.SplashActivity">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="com.example.colabore.ui.splash.SplashActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".login.LoginActivity"
+            android:name="com.example.colabore.ui.login.LoginActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.example.colabore.ui.profile.ProfileActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.history.HistoryActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.event.EventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.eventUser.EventUserActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.descriptionEvent.DescrptionEventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.password.PasswordActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.historyNgo.HistoryNgoActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.finish.FinishActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.event.EventActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.signUpNgo.SignUpNgoActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.mainNgo.MainNgoActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.picture.PictureActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.map.MapActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.description.DescriptionActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.ngoList.NgoListActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.confirm.ConfirmValueActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.chooseOne.ChooseOneActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.value.ValueActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.ticket.TicketActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.signUp.SignUpActivity"
+            android:theme="@style/StatusBarWhiteTheme"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.colabore.ui.main.MainActivity"
             android:theme="@style/StatusBarWhiteTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
