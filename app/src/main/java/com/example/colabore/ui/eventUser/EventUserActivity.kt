@@ -52,7 +52,7 @@ class EventUserActivity :  BaseActivity(), EventUserContract.View {
 
     override  fun displayLoading(close : Boolean){
         if(close) progressDialog.dialog.dismiss()
-        else progressDialog.show(this,"Perai Carai...")
+        else progressDialog.show(this)
     }
 
     override fun onBackPressed() {

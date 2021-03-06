@@ -87,7 +87,7 @@ class PictureActivity : BaseActivity(), PictureContract.View , AdapterOnClick {
 
         override  fun displayLoading(close : Boolean){
             if(close) progressDialog.dialog.dismiss()
-            else progressDialog.show(this,"Perai Carai...")
+            else progressDialog.show(this)
         }
 
 

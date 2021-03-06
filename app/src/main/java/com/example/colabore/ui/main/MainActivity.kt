@@ -90,7 +90,7 @@ class MainActivity :  BaseActivity(), MainContract.View {
 
     override  fun displayLoading(close : Boolean){
         if(close) progressDialog.dialog.dismiss()
-        else progressDialog.show(this,"Perai Carai...")
+        else progressDialog.show(this)
     }
 
     override fun displayError(msg: String?){
