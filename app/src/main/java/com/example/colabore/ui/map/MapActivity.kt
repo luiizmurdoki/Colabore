@@ -34,7 +34,7 @@ import kotlinx.android.synthetic.main.activity_ngo_description.*
 class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
-    private lateinit var userLocation: Location
+    private lateinit var locations : List<CardModel>
 
     private val presenter: MapContract.Presenter by lazy {
         MapPresenter().apply { attachView(this@MapActivity) }
@@ -52,11 +52,6 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
         setListerners()
         FirebaseApp.initializeApp(this)
         presenter.getDataUser(PersistUserInformation.cpf())
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.mapFull) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
     }
 
     fun setListerners(){
@@ -79,31 +74,26 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
         ).show()
     }
 
+    private fun setMapper(){
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.mapFull) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+    }
+
+    override fun handleLocation(location: List<CardModel>){
+        locations = location
+        setMapper()
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-        val user = LatLng(-23.6090687,-46.7693424)
-        val ong = LatLng(-23.552787, -46.835511)
-        val ong2 = LatLng(-15.75177, -47.886191)
-        val ong3 = LatLng(-23.574594, -46.652353)
-        val ong4 = LatLng(-23.597009, -46.651701)
-        val ong5 = LatLng(-22.962284, -43.219116)
-        val ong6 = LatLng(-22.981056, -43.199074)
-        val ong7 = LatLng(-22.952295, -43.190975)
-        val ong8 = LatLng(-23.596151, 46.67373)
-        val ong9 = LatLng(-23.554154, -46.662237)
-
-
-        mMap.addMarker(MarkerOptions().position(user).title("Voce esta aqui"))
-        mMap.addMarker(MarkerOptions().position(ong).title("CIDAP"))
-        mMap.addMarker(MarkerOptions().position(ong2).title("IPAM"))
-        mMap.addMarker(MarkerOptions().position(ong3).title("Transparência Brasil"))
-        mMap.addMarker(MarkerOptions().position(ong4).title("AACD"))
-        mMap.addMarker(MarkerOptions().position(ong5).title("Instituto da Criança"))
-        mMap.addMarker(MarkerOptions().position(ong6).title("Viva Rio"))
-        mMap.addMarker(MarkerOptions().position(ong7).title("Saúde Criança"))
-        mMap.addMarker(MarkerOptions().position(ong8).title("Fundação Abrinq"))
-        mMap.addMarker(MarkerOptions().position(ong9).title("Vetor Brasil"))
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(user, 12f))
+        locations.run {
+            locations.forEach {
+                mMap = googleMap
+                mMap.addMarker(MarkerOptions().position(LatLng(it.latitude.toDouble(), it.longitude.toDouble())).title(it.nome))
+            }
+            mMap.addMarker(MarkerOptions().position(LatLng(-23.6090687,-46.7693424)).title("Voce esta aqui"))
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(-23.6090687,-46.7693424), 12f))
+        }
     }
 }

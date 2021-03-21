@@ -2,6 +2,7 @@ package com.example.colabore.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import com.example.colabore.BuildConfig
 import com.example.colabore.R
 import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.chooseOne.ChooseOneActivity
@@ -31,6 +32,14 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
         setListeners()
+        setDebugger()
+    }
+
+    private fun setDebugger(){
+        if(BuildConfig.DEBUG) {
+            loginCpfEt.setText("48225692845")
+            loginPasswordEt.setText("luiz290198")
+        }
     }
 
     override fun onStart() {
