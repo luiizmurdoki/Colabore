@@ -35,7 +35,6 @@ class MapPresenter : MapContract.Presenter {
 
     }
 
-
     override fun attachView(mvpView: MapContract.View?) {
         auth = FirebaseAuth.getInstance()
         val currentUser: FirebaseUser? = auth.getCurrentUser()

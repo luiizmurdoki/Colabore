@@ -1,30 +1,27 @@
 package com.example.colabore.ui.map
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.os.Bundle
-import android.util.Log
-import androidx.core.content.ContextCompat
+import android.provider.Settings
+import androidx.core.app.ActivityCompat
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
 import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.description.DescriptionContract
-import com.example.colabore.ui.description.DescriptionPresenter
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
-import com.example.colabore.ui.value.ValueActivity
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.FirebaseApp
@@ -35,15 +32,13 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
     private lateinit var locations : List<CardModel>
+    private lateinit var locationManager : LocationManager
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var mMap: GoogleMap
 
     private val presenter: MapContract.Presenter by lazy {
         MapPresenter().apply { attachView(this@MapActivity) }
     }
-
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-
-
-    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,26 +69,46 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
         ).show()
     }
 
-    private fun setMapper(){
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.mapFull) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-    }
-
     override fun handleLocation(location: List<CardModel>){
         locations = location
         setMapper()
     }
 
+
+    private fun setMapper(){
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFull) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         locations.run {
             locations.forEach {
                 mMap = googleMap
-                mMap.addMarker(MarkerOptions().position(LatLng(it.latitude.toDouble(), it.longitude.toDouble())).title(it.nome))
+                mMap.addMarker(
+                    MarkerOptions().position(
+                        LatLng(
+                            it.latitude.toDouble(),
+                            it.longitude.toDouble()
+                        )
+                    ).title(it.nome)
+                )
             }
-            mMap.addMarker(MarkerOptions().position(LatLng(-23.6090687,-46.7693424)).title("Voce esta aqui"))
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(-23.6090687,-46.7693424), 12f))
+        }
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)  == PackageManager.PERMISSION_DENIED) {
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+        } else {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0F, object :
+                LocationListener {
+                override fun onLocationChanged(p0: Location) {
+                    mMap.addMarker(MarkerOptions().position(LatLng(p0.latitude, p0.longitude)).title("Voce esta aqui"))
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(p0.latitude, p0.longitude), 12f))
+                }
+                override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+                override fun onProviderEnabled(provider: String?) {}
+                override fun onProviderDisabled(provider: String?) {}
+            })
         }
     }
 }
