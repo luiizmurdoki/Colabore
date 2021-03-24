@@ -107,9 +107,13 @@
     <string name="action_send">Enviar</string>
 
 
+
+
     <!--SINGUP-->
     <string name="title_event">Crie seu evento!</string>
 
+    <!--MAP-->
+    <string name="current_location">Você esta aqui!</string>
 
     <!--AppTextInputLayout DEFAULT FEEDBACKS-->
     <string name="network_error_unknown">Erro desconhecido, não foi possível completar sua requisição.</string>

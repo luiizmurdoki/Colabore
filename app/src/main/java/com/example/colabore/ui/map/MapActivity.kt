@@ -102,7 +102,7 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0F, object :
                 LocationListener {
                 override fun onLocationChanged(p0: Location) {
-                    mMap.addMarker(MarkerOptions().position(LatLng(p0.latitude, p0.longitude)).title("Voce esta aqui"))
+                    mMap.addMarker(MarkerOptions().position(LatLng(p0.latitude, p0.longitude)).title(getString(R.string.current_location)))
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(p0.latitude, p0.longitude), 12f))
                 }
                 override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
