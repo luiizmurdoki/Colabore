@@ -145,7 +145,7 @@
             android:visibility="invisible" />
 
         <Button
-            android:id="@+id/loginSigninBtn"
+            android:id="@+id/nextNgoBtn"
             style="@style/ButtonGreenTextWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -3,25 +3,17 @@ package com.example.colabore.ui.password
 import android.content.Intent
 import android.os.Bundle
 import com.example.colabore.R
-import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.model.PersistUserInformation.cnpj
 import com.example.colabore.ui.base.BaseActivity
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
 import com.example.colabore.ui.finish.FinishActivity
-import com.example.colabore.ui.login.LoginActivity
-import com.example.colabore.ui.signUp.SignUpContract
-import com.example.colabore.ui.signUp.SignupPresenter
 import com.example.colabore.ui.widget.DefaultEditText
 import com.example.colabore.utils.extension.validateFields
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_password.*
-import kotlinx.android.synthetic.main.activity_signup.*
-import kotlinx.android.synthetic.main.activity_signup.loginSigninBtn
-import kotlinx.android.synthetic.main.activity_signup.pfCpfDt
-import kotlinx.android.synthetic.main.activity_signup.pfNameDt
 
 class PasswordActivity :  BaseActivity(), PasswordContract.View {
 
@@ -49,7 +41,7 @@ class PasswordActivity :  BaseActivity(), PasswordContract.View {
 
     private fun setListeners(){
         toolbarPassword.setOnClickListener { onBackPressed() }
-        loginSigninBtn2.setOnClickListener {
+        nextPasswordBtn.setOnClickListener {
             if (fields.validateFields()){
                 if(cnpj().isNotEmpty()){
                     presenter.setNgo(signinPasswordEt.text)
