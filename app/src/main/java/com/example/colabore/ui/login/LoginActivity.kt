@@ -37,8 +37,8 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
 
     private fun setDebugger(){
         if(BuildConfig.DEBUG) {
-            loginCpfEt.setText("48225692845")
-            loginPasswordEt.setText("luiz290198")
+            loginCpfEt.setText("")
+            loginPasswordEt.setText("")
         }
     }
 
