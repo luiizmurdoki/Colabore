@@ -97,7 +97,8 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
 
     override fun displayError(msg: String?){
         MessageBottomDialog(this, getString(R.string.placeholder_error_title),
-            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg                              ,
+            if (msg.isNullOrEmpty()) getString(R.string.login_error)
+            else msg,
             getString(R.string.action_ok), {}, null, {}, isCancelable = true
         ).show()
     }
