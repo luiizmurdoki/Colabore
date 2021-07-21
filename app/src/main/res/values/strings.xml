@@ -125,7 +125,8 @@
 
 
 
-
+    <!--LOADING-->
+    <string name="loading">Carregando</string>
 
 
 </resources>
