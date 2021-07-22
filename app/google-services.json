@@ -1,34 +1,78 @@
 {
   "project_info": {
-    "project_number": "794391014166",
-    "project_id": "colaboreapp-f180b",
-    "storage_bucket": "colaboreapp-f180b.appspot.com"
+    "project_number": "483053497382",
+    "firebase_url": "https://colaboreapptcc.firebaseio.com",
+    "project_id": "colaboreapptcc",
+    "storage_bucket": "colaboreapptcc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:794391014166:android:9c012903b1c843028b7e37",
+        "mobilesdk_app_id": "1:483053497382:android:5e01dd08f7d0d9a61c8ae7",
         "android_client_info": {
           "package_name": "com.example.colabore"
         }
       },
       "oauth_client": [
         {
-          "client_id": "794391014166-oe8jf98no54ikt2vn0trbp5cb9h4qv7a.apps.googleusercontent.com",
+          "client_id": "483053497382-1t8sibtvtiitfudh8ip9ldjbhecerkvj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBniQboS6WlSgnRLZfmvVvjXyFJDGPHRCA"
+          "current_key": "AIzaSyASkvgfv7OxpTUUwknQQpOV4rwDAADA7b0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "794391014166-oe8jf98no54ikt2vn0trbp5cb9h4qv7a.apps.googleusercontent.com",
+              "client_id": "483053497382-1t8sibtvtiitfudh8ip9ldjbhecerkvj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "483053497382-onhjjsbbhlas63nstnbvqve5ivjl8mkk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unip.colaboreapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483053497382:android:93bceb3e72d19fab1c8ae7",
+        "android_client_info": {
+          "package_name": "com.unip.colaboreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483053497382-1t8sibtvtiitfudh8ip9ldjbhecerkvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASkvgfv7OxpTUUwknQQpOV4rwDAADA7b0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483053497382-1t8sibtvtiitfudh8ip9ldjbhecerkvj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "483053497382-onhjjsbbhlas63nstnbvqve5ivjl8mkk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unip.colaboreapp"
+              }
             }
           ]
         }
