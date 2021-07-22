@@ -43,7 +43,7 @@ class SignUpNgoActivity :  BaseActivity(), SignUpNgoContract.View {
 
     private fun setListeners(){
         toolbarSingup.setOnClickListener { onBackPressed() }
-        nextBtn.setOnClickListener {
+        nextNgoBtn.setOnClickListener {
             if (fields.validateFields()){
                 PersistUserInformation.name(NameNgoEt.text)
                 PersistUserInformation.cnpj(CnpjEt.text)
@@ -74,7 +74,7 @@ class SignUpNgoActivity :  BaseActivity(), SignUpNgoContract.View {
 
     override fun displayError(msg: String?){
         MessageBottomDialog(this, getString(R.string.placeholder_error_title),
-            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg                              ,
+            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg,
             getString(R.string.action_ok), {}, null, {}, isCancelable = true
         ).show()
     }

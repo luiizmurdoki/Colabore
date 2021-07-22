@@ -43,7 +43,7 @@ class MainNgoActivity :  BaseActivity(), MainNgoContract.View {
         setContentView(R.layout.activity_ngo_main)
         setListerns()
         setDisplay()
-        presenter.loadData(cpf())
+        presenter.loadData(cnpj = cpf())
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
     }

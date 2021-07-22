@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 
 
-class LoginActivity :  BaseActivity(), LoginContract.View {
+class LoginActivity : BaseActivity(), LoginContract.View {
 
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
@@ -35,10 +35,10 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         setDebugger()
     }
 
-    private fun setDebugger(){
-        if(BuildConfig.DEBUG) {
-            loginCpfEt.setText("")
-            loginPasswordEt.setText("")
+    private fun setDebugger() {
+        if (BuildConfig.DEBUG) {
+            loginCpfEt.setText("48225692845")
+            loginPasswordEt.setText("luiz290198")
         }
     }
 
@@ -52,36 +52,35 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         setListeners()
     }
 
-    private fun setListeners(){
+    private fun setListeners() {
         loginSigninBtn.setOnClickListener { setLoginBtnClick() }
-        loginRegisterBtn.setOnClickListener { openChoose()   }
+        loginRegisterBtn.setOnClickListener { openChoose() }
 
     }
 
 
     private fun setLoginBtnClick() {
         if (allFieldsValid()) {
-           presenter.getUser(loginCpfEt.text, loginPasswordEt.text)
+            presenter.getUser(loginCpfEt.text, loginPasswordEt.text)
         } else {
             displayError(msg = getString(R.string.fields_error))
         }
     }
 
-    override fun openHome(cpf: String){
-        if(cpf.unmask().length > 11){
-            val intent = Intent(this, MainNgoActivity::class.java).apply{}
+    override fun openHome(cpf: String) {
+        if (cpf.unmask().length > 11) {
+            val intent = Intent(this, MainNgoActivity::class.java).apply {}
             startActivity(intent)
             finish()
-        }
-        else{
-            val intent = Intent(this, MainActivity::class.java).apply{}
+        } else {
+            val intent = Intent(this, MainActivity::class.java).apply {}
             startActivity(intent)
             finish()
         }
     }
 
-    private fun openChoose(){
-        val intent = Intent(this, ChooseOneActivity::class.java).apply{}
+    private fun openChoose() {
+        val intent = Intent(this, ChooseOneActivity::class.java).apply {}
         startActivity(intent)
     }
 
@@ -99,14 +98,14 @@ class LoginActivity :  BaseActivity(), LoginContract.View {
         presenter.detachView()
     }
 
-    override  fun displayLoading(close : Boolean){
-            if(close) progressDialog.dialog.dismiss()
-            else progressDialog.show(this)
+    override fun displayLoading(close: Boolean) {
+        if (close) progressDialog.dialog.dismiss()
+        else progressDialog.show(this)
     }
 
-    override fun displayError(msg: String?){
+    override fun displayError(msg: String?) {
         MessageBottomDialog(this, getString(R.string.placeholder_error_title),
-            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg                              ,
+            if (msg.isNullOrEmpty()) getString(R.string.login_error) else msg,
             getString(R.string.action_ok), {}, null, {}, isCancelable = true
         ).show()
     }
