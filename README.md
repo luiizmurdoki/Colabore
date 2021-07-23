@@ -35,7 +35,7 @@ Aqui estao as tecnologias usadas nos projeto.
  
 ## Versao
 
-1.0.0
+1.0.2
  
  
 ## Autor
