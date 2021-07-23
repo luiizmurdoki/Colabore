@@ -72,7 +72,6 @@ class MainActivity :  BaseActivity(), MainContract.View {
             startActivity(intent)
         }
 
-
     }
 
     override fun displayName(name:String?, imageUrl:String?){

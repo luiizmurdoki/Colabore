@@ -12,6 +12,6 @@ interface MainNgoContract {
     }
 
     interface Presenter : BasePresenter<View> {
-        fun loadData(cpf: String)
+        fun loadData(cnpj: String)
     }
 }

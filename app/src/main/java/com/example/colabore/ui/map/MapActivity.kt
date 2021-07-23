@@ -1,30 +1,27 @@
 package com.example.colabore.ui.map
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.os.Bundle
-import android.util.Log
-import androidx.core.content.ContextCompat
+import android.provider.Settings
+import androidx.core.app.ActivityCompat
 import com.example.colabore.R
 import com.example.colabore.model.CardModel
 import com.example.colabore.model.PersistUserInformation
 import com.example.colabore.ui.base.BaseActivity
-import com.example.colabore.ui.description.DescriptionContract
-import com.example.colabore.ui.description.DescriptionPresenter
 import com.example.colabore.ui.dialog.LoadingDialog
 import com.example.colabore.ui.dialog.MessageBottomDialog
-import com.example.colabore.ui.value.ValueActivity
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.FirebaseApp
@@ -34,16 +31,14 @@ import kotlinx.android.synthetic.main.activity_ngo_description.*
 class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
     private lateinit var auth: FirebaseAuth
     private val progressDialog = LoadingDialog()
-    private lateinit var userLocation: Location
+    private lateinit var locations : List<CardModel>
+    private lateinit var locationManager : LocationManager
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var mMap: GoogleMap
 
     private val presenter: MapContract.Presenter by lazy {
         MapPresenter().apply { attachView(this@MapActivity) }
     }
-
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-
-
-    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,11 +47,6 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
         setListerners()
         FirebaseApp.initializeApp(this)
         presenter.getDataUser(PersistUserInformation.cpf())
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.mapFull) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
     }
 
     fun setListerners(){
@@ -79,31 +69,46 @@ class MapActivity :  BaseActivity(), MapContract.View , OnMapReadyCallback {
         ).show()
     }
 
+    override fun handleLocation(location: List<CardModel>){
+        locations = location
+        setMapper()
+    }
+
+
+    private fun setMapper(){
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFull) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-        val user = LatLng(-23.6090687,-46.7693424)
-        val ong = LatLng(-23.552787, -46.835511)
-        val ong2 = LatLng(-15.75177, -47.886191)
-        val ong3 = LatLng(-23.574594, -46.652353)
-        val ong4 = LatLng(-23.597009, -46.651701)
-        val ong5 = LatLng(-22.962284, -43.219116)
-        val ong6 = LatLng(-22.981056, -43.199074)
-        val ong7 = LatLng(-22.952295, -43.190975)
-        val ong8 = LatLng(-23.596151, 46.67373)
-        val ong9 = LatLng(-23.554154, -46.662237)
-
-
-        mMap.addMarker(MarkerOptions().position(user).title("Voce esta aqui"))
-        mMap.addMarker(MarkerOptions().position(ong).title("CIDAP"))
-        mMap.addMarker(MarkerOptions().position(ong2).title("IPAM"))
-        mMap.addMarker(MarkerOptions().position(ong3).title("Transparência Brasil"))
-        mMap.addMarker(MarkerOptions().position(ong4).title("AACD"))
-        mMap.addMarker(MarkerOptions().position(ong5).title("Instituto da Criança"))
-        mMap.addMarker(MarkerOptions().position(ong6).title("Viva Rio"))
-        mMap.addMarker(MarkerOptions().position(ong7).title("Saúde Criança"))
-        mMap.addMarker(MarkerOptions().position(ong8).title("Fundação Abrinq"))
-        mMap.addMarker(MarkerOptions().position(ong9).title("Vetor Brasil"))
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(user, 12f))
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        locations.run {
+            locations.forEach {
+                mMap = googleMap
+                mMap.addMarker(
+                    MarkerOptions().position(
+                        LatLng(
+                            it.latitude.toDouble(),
+                            it.longitude.toDouble()
+                        )
+                    ).title(it.nome)
+                )
+            }
+        }
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)  == PackageManager.PERMISSION_DENIED) {
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+        } else {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0F, object :
+                LocationListener {
+                override fun onLocationChanged(p0: Location) {
+                    mMap.addMarker(MarkerOptions().position(LatLng(p0.latitude, p0.longitude)).title(getString(R.string.current_location)))
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(p0.latitude, p0.longitude), 12f))
+                }
+                override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+                override fun onProviderEnabled(provider: String?) {}
+                override fun onProviderDisabled(provider: String?) {}
+            })
+        }
     }
 }

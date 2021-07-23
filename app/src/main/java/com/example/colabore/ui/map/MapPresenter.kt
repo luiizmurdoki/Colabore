@@ -26,6 +26,7 @@ class MapPresenter : MapContract.Presenter {
             .addOnSuccessListener{
                 view?.displayLoading(true)
                 val localization = it.toObjects<CardModel>(CardModel ::class.java)
+                 view?.handleLocation(localization)
             }
             .addOnFailureListener{ exception->
                 view?.displayLoading(true)
@@ -33,7 +34,6 @@ class MapPresenter : MapContract.Presenter {
             }
 
     }
-
 
     override fun attachView(mvpView: MapContract.View?) {
         auth = FirebaseAuth.getInstance()

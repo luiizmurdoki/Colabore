@@ -40,7 +40,6 @@
                 android:layout_marginTop="@dimen/vertical_margin_large"
                 android:textColor="@color/colorblack"
                 app:etEmptinessIsValid="false"
-                text = "25316577035"
                 app:etInputTextType="cpfOrCnpj"
                 app:hint="@string/hint_cpf_cnpj"
                 app:layout_constraintBottom_toTopOf="@id/loginPasswordEt"
@@ -59,22 +58,10 @@
                 app:textColor="@color/colorblack"
                 app:toggleColor="@color/colorGreen"
                 app:hint="@string/hint_password"
-                text = "Teste123"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginCpfEt"
                 tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/loginForgotPasswordTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/vertical_margin"
-                android:textColor="@color/colorGreen"
-                android:text="@string/forgot_password"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginPasswordEt" />
 
             <Button
                 android:id="@+id/loginSigninBtn"
@@ -87,7 +74,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/loginRegisterBtn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginForgotPasswordTv"
+                app:layout_constraintTop_toBottomOf="@+id/loginPasswordEt"
                 app:layout_constraintVertical_bias="1"
                 app:layout_constraintVertical_chainStyle="packed" />
 
@@ -98,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:layout_marginBottom="@dimen/small_image_home"
-                android:text="@string/btn_sign_in"
+                android:text="@string/btn_sign_up"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

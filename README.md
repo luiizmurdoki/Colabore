@@ -2,6 +2,9 @@
 Projeto elaborado para fins de estudo a ideia do projeto é ter um App para que doadores consigam achar uma ONG que seja de seu interesse,
 dando ao doador mais versatilidade em achar as ONGs e dando as ONGs uma maneira de aumentar sua visibilidade.
 
+# Preview
+![Fluxo Principal](https://github.com/luiizmurdoki/Colabore/blob/develop/app/src/picturesforbanner/banner.png)
+
 ## Desenvolvimento
 
 Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num diretório de sua preferência:
@@ -14,8 +17,6 @@ git clone https://github.com/luiizmurdoki/Colabore
 ## Contribuições
 
 Contribuições são sempre bem-vindas! Para contribuir lembre-se sempre de adicionar a devida documentação.
-
-![Logo of the project](http://logo_link)
  
 ## Tecnologias
 

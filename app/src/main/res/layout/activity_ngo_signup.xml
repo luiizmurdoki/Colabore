@@ -139,13 +139,13 @@
         <!--Existe somente para deixar o botão no fundo do layout-->
         <View
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/small_image"
             android:layout_weight="1"
             android:visibility="invisible" />
 
         <Button
-            android:id="@+id/loginSigninBtn"
+            android:id="@+id/nextNgoBtn"
             style="@style/ButtonGreenTextWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

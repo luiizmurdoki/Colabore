@@ -48,7 +48,7 @@ class SignUpActivity:  BaseActivity(), SignUpContract.View {
 
     private fun setListeners(){
         toolbarSingup.setOnClickListener { onBackPressed() }
-        loginSigninBtn.setOnClickListener {
+        nextUserBtn.setOnClickListener {
             if (fields.validateFields()){
                  name(pfNameDt.text)
                 cpf(pfCpfDt.text)

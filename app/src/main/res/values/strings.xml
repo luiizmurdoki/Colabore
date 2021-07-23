@@ -11,7 +11,7 @@
     <!--BUTTONS-->
     <string name="btn_continue">Continuar</string>
     <string name="btn_enter">Entrar</string>
-    <string name="btn_sign_in">Cadastre-se</string>
+    <string name="btn_sign_up">Cadastre-se</string>
     <string name="btn_donor">Doar</string>
     <string name="btn_confirm">Confirmar</string>
     <string name="btn_home">Voltar ao inicio</string>
@@ -107,9 +107,13 @@
     <string name="action_send">Enviar</string>
 
 
+
+
     <!--SINGUP-->
     <string name="title_event">Crie seu evento!</string>
 
+    <!--MAP-->
+    <string name="current_location">Você esta aqui!</string>
 
     <!--AppTextInputLayout DEFAULT FEEDBACKS-->
     <string name="network_error_unknown">Erro desconhecido, não foi possível completar sua requisição.</string>
@@ -121,7 +125,8 @@
 
 
 
-
+    <!--LOADING-->
+    <string name="loading">Carregando</string>
 
 
 </resources>
